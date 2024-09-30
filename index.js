@@ -4,9 +4,9 @@ import process from 'node:process';
 const litoken = process.env.LICHESS_TOKEN
 
 const paring = [
-    [["Stockfish_15_10M", "Velvet 8.1.0-dev1"], "id"],
-    [["Stockfish_17", "Velvet-dev1"], "id2"],
-    [["Stockfish_6_10M", "Velvet 80-dev1"], "id3"],
+    [["Stockfish_15_100M", "Obsidian dev-13.23"], "vu0hvi1p"],
+    [["Stockfish_15_100M", "Stockfish_15_100M"], "wulYcqx9"],
+    [["Ceres 1.0_768x15_NLA", "Stockfish_15_100M"], "5ZWpTgAo"],
 ]
 
 const fetchTCECpgn = () => {
