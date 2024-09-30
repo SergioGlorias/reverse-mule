@@ -62,4 +62,5 @@ const run = async () => {
     else console.error("Fail Push")
 }
 
+setInterval(() => run(), 5*1000)
 run()
