@@ -48,7 +48,7 @@ const run = async () => {
 
     console.log(`Match: ${white} - ${black}`)
 
-    const id = paring.find(p => p[0].includes(white) && p[0].includes(black))[1]
+    const id = paring.find(p => p[0].includes(white) && p[0].includes(black))
 
     console.log(`ID: ${id}`)
 
@@ -56,7 +56,7 @@ const run = async () => {
 
     const pgnText = makePgn(pgn)
 
-    const r = await pushPGN(pgnText, id)
+    const r = await pushPGN(pgnText, id[1])
 
     if (r) console.info(r)
     else console.error("Fail Push")
