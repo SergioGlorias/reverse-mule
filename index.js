@@ -5,7 +5,7 @@ const litoken = process.env.LICHESS_TOKEN
 
 const paring = [
     [["Stockfish_15_100M", "Obsidian dev-13.23"], "vu0hvi1p"],
-    [["Stockfish_15_100M", "LCZero 0.31-dag-4167c1e-BT4-6147500-it33"], "wulYcqx9"],
+    [["Stockfish_15_100M", "LCZero 0.31-dag-4167c1e-BT4-6147500-it332"], "wulYcqx9"],
     [["Ceres 1.0_768x15_NLA", "Stockfish_15_100M"], "5ZWpTgAo"],
 ]
 
