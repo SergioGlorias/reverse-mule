@@ -43,9 +43,47 @@ const seed = [ // maybe need update
 ]
 
 const paring = [
-    [["Stockfish_15_100M", "Obsidian dev-13.23"], "vu0hvi1p"],
-    [["Stockfish_15_100M", "LCZero 0.31-dag-4167c1e-BT4-6147500-it332"], "wulYcqx9"],
-    [["Ceres 1.0_768x15_NLA", "Stockfish_15_100M"], "5ZWpTgAo"],
+    // Round 32
+    [[seed[1], seed[9]], "kDvuBQvK"], // Match 1
+    [[seed[10], seed[11]], "L1p0Pk3o"], // Match 2
+    [[seed[5], seed[12]], "u8ZUXrjz"], // Match 3
+    [[seed[13], seed[14]], "JhUClQ3q"], // Match 4
+    [[seed[3], seed[15]], "sA7SQoPk"], // Match 5
+    [[seed[16], seed[17]], "BlkYnKOD"], // Match 6
+    [[seed[7], seed[18]], "d4dZ7818"], // Match 7
+    [[seed[19], seed[20]], "W4tWaIuR"], // Match 8
+    [[seed[2], seed[21]], "bnpC1kCW"], // Match 9
+    [[seed[22], seed[23]], "HSn0n8nh"], // Match 10
+    [[seed[6], seed[24]], "BypTJAy1"], // Match 11
+    [[seed[25], seed[26]], "G7PKJ7Zx"], // Match 12
+    [[seed[4], seed[27]], "cIjRCsxf"], // Match 13
+    [[seed[28], seed[29]], "7bCF3k2b"], // Match 14
+    [[seed[8], seed[30]], "0J6ubcQ4"], // Match 15
+    [[seed[31], seed[32]], "621TlrK9"], // Match 16
+
+    //Round 16
+    [[seed[0], seed[0]], "B58ovSQU"], // Match 1
+    [[seed[0], seed[0]], "pNG5UIWg"], // Match 2
+    [[seed[0], seed[0]], "rQdSdJiI"], // Match 3
+    [[seed[0], seed[0]], "ZpXSiTaf"], // Match 4
+    [[seed[0], seed[0]], "qNm2Urxl"], // Match 5
+    [[seed[0], seed[0]], "ElBZMblR"], // Match 6
+    [[seed[0], seed[0]], "JykQLa3c"], // Match 7
+    [[seed[0], seed[0]], "Vmnr4qJW"], // Match 8
+
+    // Quarterfinals
+    [[seed[0], seed[0]], "vOrgdhPg"], // Match 1
+    [[seed[0], seed[0]], "DlXNHhie"], // Match 2
+    [[seed[0], seed[0]], "3p0O0wlI"], // Match 3
+    [[seed[0], seed[0]], "L44jWgVE"], // Match 4
+
+    // Semifinals
+    [[seed[0], seed[0]], "w4fjiksD"], // Match 1
+    [[seed[0], seed[0]], "mGHkYzya"], // Match 2
+
+    // Bronze & Final
+    [[seed[0], seed[0]], "OIjRBuhM"], // Bronze
+    [[seed[0], seed[0]], "tdiYq8Vl"], // Final
 ]
 
 const fetchTCECpgn = () => {
