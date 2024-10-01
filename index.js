@@ -126,6 +126,14 @@ const run = async () => {
     const pgn = await fetchTCECpgn()
     if (!pgn) return
 
+    const event = pgn.headers.get("Event")
+
+    console.log(`Event: ${event}`)
+
+    if (!event.toLowerCase().includes("cup 14")) return
+
+    if (event.toLowerCase().includes("testing")) return
+
     const white = pgn.headers.get("White")
     const black = pgn.headers.get("Black")
 
