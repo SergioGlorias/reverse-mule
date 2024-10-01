@@ -87,7 +87,11 @@ const paring = [
 ]
 
 const fetchTCECpgn = () => {
-    return fetch("https://tcec-chess.com/evalbotelo/plainlive.pgn")
+    return fetch("https://tcec-chess.com/evalbotelo/plainlive.pgn", {
+        headers: {
+            "User-Agent": "github.com/SergioGlorias/reverse-mule"
+        }
+    })
         .then(res => {
             if (res.status !== 200) return null
             return res.text()
@@ -108,15 +112,17 @@ const pushPGN = (pgn, id) => {
         body: pgn,
         method: "POST",
         headers: {
-            Authorization: "Bearer " + litoken
+            Authorization: "Bearer " + litoken,
+            "User-Agent": "Reverse Mule by SergioGlorias/reverse-mule"
         }
     })
-    .then(res => res.json())
-    .catch(() => null)
+        .then(res => res.json())
+        .catch(() => null)
 }
 
 
 const run = async () => {
+    console.log("FETCH")
     const pgn = await fetchTCECpgn()
     if (!pgn) return
 
@@ -139,5 +145,6 @@ const run = async () => {
     else console.error("Fail Push")
 }
 
-setInterval(() => run(), 3*1000)
+console.log("===== CODE STARTED =====")
+setInterval(() => run(), 3 * 1000)
 run()
