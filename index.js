@@ -16,28 +16,28 @@ const seed = [ // maybe need update
 
     // RANDOM SEED
 
-    "Lizard", // 9 - r01
+    "Texel", // 9 - r01
     "Stormphrax", // 10 - r02
-    "RubiChess", // 11 - r03
+    "Seer", // 11 - r03
     "Caissa", // 12 - r04
-    "Tucano", // 13 - r05 
-    "Seer", // 14 - r06
-    "Velvet", // 15 - r07
-    "Uralochka", // 16 - r08
-    "Texel", // 17 - r09
-    "Ginkgo", // 18 - r10
-    "Minic", // 19 - r11
-    "Altair", // 20 - r12
-    "Stoofvlees", // 21 - r13
-    "DeepSjeng", // 22 - r14
-    "Arasan", // 23 - r15
-    "BlackMarlin", // 24 - r16
-    "Equisetum", // 25 - r17
-    "akimbo", // 26 - r18
-    "Booot", // 27 - r19
-    "PlentyChess", // 28 - r20
-    "Renegade", // 29 - r21
-    "Igel", // 30 - r22
+    "RubiChess", // 13 - r05 
+    "PlentyChess", // 14 - r06
+    "DeepSjeng", // 15 - r07
+    "Arasan", // 16 - r08
+    "Uralochka", // 17 - r09
+    "akimbo", // 18 - r10
+    "Equisetum", // 19 - r11
+    "Booot", // 20 - r12
+    "StoofVlees", // 21 - r13
+    "BlackMarlin", // 22 - r14
+    "Velvet", // 23 - r15
+    "Igel", // 24 - r16
+    "Tucano", // 25 - r17
+    "Lizard", // 26 - r18
+    "Renegade", // 27 - r19
+    "Ginkgo", // 28 - r20
+    "Minic", // 29 - r21
+    "Altair", // 30 - r22
     "Viridithas", // 31 - r23
     "Devre", // 32 - r24
 ]
