@@ -122,7 +122,7 @@ const pushPGN = (pgn, id) => {
 
 
 const run = async () => {
-    console.log("FETCH")
+    console.log("=== FETCH ===")
     const pgn = await fetchTCECpgn()
     if (!pgn) return
 
@@ -143,8 +143,9 @@ const run = async () => {
 
     if (r) console.info(r)
     else console.error("Fail Push")
+
+    console.log("=========")
 }
 
 console.log("===== CODE STARTED =====")
 setInterval(() => run(), 3 * 1000)
-run()
