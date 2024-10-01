@@ -44,22 +44,22 @@ const seed = [ // maybe need update
 
 const paring = [
     // Round 32
-    [[seed[1], seed[9]], "kDvuBQvK"], // Match 1
-    [[seed[10], seed[11]], "L1p0Pk3o"], // Match 2
-    [[seed[5], seed[12]], "u8ZUXrjz"], // Match 3
-    [[seed[13], seed[14]], "JhUClQ3q"], // Match 4
-    [[seed[3], seed[15]], "sA7SQoPk"], // Match 5
-    [[seed[16], seed[17]], "BlkYnKOD"], // Match 6
-    [[seed[7], seed[18]], "d4dZ7818"], // Match 7
-    [[seed[19], seed[20]], "W4tWaIuR"], // Match 8
-    [[seed[2], seed[21]], "bnpC1kCW"], // Match 9
-    [[seed[22], seed[23]], "HSn0n8nh"], // Match 10
-    [[seed[6], seed[24]], "BypTJAy1"], // Match 11
-    [[seed[25], seed[26]], "G7PKJ7Zx"], // Match 12
-    [[seed[4], seed[27]], "cIjRCsxf"], // Match 13
-    [[seed[28], seed[29]], "7bCF3k2b"], // Match 14
-    [[seed[8], seed[30]], "0J6ubcQ4"], // Match 15
-    [[seed[31], seed[32]], "621TlrK9"], // Match 16
+    [[seed[1], seed[32]], "kDvuBQvK"], // Match 1
+    [[seed[17], seed[16]], "L1p0Pk3o"], // Match 2
+    [[seed[9], seed[24]], "u8ZUXrjz"], // Match 3
+    [[seed[25], seed[8]], "JhUClQ3q"], // Match 4
+    [[seed[5], seed[28]], "sA7SQoPk"], // Match 5
+    [[seed[21], seed[12]], "BlkYnKOD"], // Match 6
+    [[seed[13], seed[20]], "d4dZ7818"], // Match 7
+    [[seed[29], seed[4]], "W4tWaIuR"], // Match 8
+    [[seed[3], seed[30]], "bnpC1kCW"], // Match 9
+    [[seed[19], seed[14]], "HSn0n8nh"], // Match 10
+    [[seed[11], seed[22]], "BypTJAy1"], // Match 11
+    [[seed[27], seed[6]], "G7PKJ7Zx"], // Match 12
+    [[seed[7], seed[26]], "cIjRCsxf"], // Match 13
+    [[seed[23], seed[10]], "7bCF3k2b"], // Match 14
+    [[seed[15], seed[18]], "0J6ubcQ4"], // Match 15
+    [[seed[31], seed[2]], "621TlrK9"], // Match 16
 
     //Round 16
     [[seed[0], seed[0]], "B58ovSQU"], // Match 1
