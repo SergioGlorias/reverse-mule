@@ -160,4 +160,4 @@ const run = async () => {
 }
 
 console.log("===== CODE STARTED =====")
-setInterval(() => run(), 10 * 1000)
+setInterval(() => run(), 5 * 1000)
