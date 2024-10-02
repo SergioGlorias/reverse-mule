@@ -16,30 +16,30 @@ const seed = [
 
     // RANDOM SEED
 
-    "Texel", // 9
-    "Stormphrax", // 10
-    "Seer", // 11
-    "Caissa", // 12
-    "RubiChess", // 13
-    "PlentyChess", // 14
-    "DeepSjeng", // 15
-    "Arasan", // 16
-    "Uralochka", // 17
-    "akimbo", // 18
-    "Equisetum", // 19
-    "Booot", // 20
-    "StoofVlees", // 21
-    "BlackMarlin", // 22
-    "Velvet", // 23
-    "Igel", // 24
-    "Tucano", // 25
-    "Lizard", // 26
-    "Renegade", // 27
-    "Ginkgo", // 28
-    "Minic", // 29
-    "Altair", // 30
-    "Viridithas", // 31
-    "Devre", // 32
+    "Texel", // 9 - r01
+    "Stormphrax", // 10 - r02
+    "Seer", // 11 - r03
+    "Caissa", // 12 - r04
+    "RubiChess", // 13 - r05 
+    "PlentyChess", // 14 - r06
+    "DeepSjeng", // 15 - r07
+    "Arasan", // 16 - r08
+    "Uralochka", // 17 - r09
+    "akimbo", // 18 - r10
+    "Equisetum", // 19 - r11
+    "Booot", // 20 - r12
+    "StoofVlees", // 21 - r13
+    "BlackMarlin", // 22 - r14
+    "Velvet", // 23 - r15
+    "Igel", // 24 - r16
+    "Tucano", // 25 - r17
+    "Lizard", // 26 - r18
+    "Renegade", // 27 - r19
+    "Ginkgo", // 28 - r20
+    "Minic", // 29 - r21
+    "Altair", // 30 - r22
+    "Viridithas", // 31 - r23
+    "Devre", // 32 - r24
 ]
 
 const paring = [
