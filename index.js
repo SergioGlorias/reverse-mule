@@ -134,8 +134,13 @@ const run = async () => {
 
     if (event.toLowerCase().includes("testing")) return
 
+    const roundN = pgn.headers.get("Round").split(".")[1]
+
     const white = pgn.headers.get("White")
     const black = pgn.headers.get("Black")
+
+    pgn.headers.set("White", `[${roundN}] ${white}`)
+    pgn.headers.set("Black", `[${roundN}] ${black}`)
 
     console.log(`Match: ${white} - ${black}`)
 
