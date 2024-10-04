@@ -143,7 +143,7 @@ const run = async () => {
 
     console.log(`Match: ${white} - ${black}`)
 
-    const id = paring.find(p => p[0].filter(e => white.includes(e) || black.includes(e)).length == 2)
+    const id = paring.find(p => p[0].filter(e => white.toLowerCase().includes(e.toLowerCase()) || black.toLowerCase().includes(e.toLowerCase())).length == 2)
 
     console.log(`ID: ${id}`)
 
