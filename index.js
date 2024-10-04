@@ -28,7 +28,7 @@ const seed = [
     "akimbo", // 18 - r10
     "Equisetum", // 19 - r11
     "Booot", // 20 - r12
-    "StoofVlees", // 21 - r13
+    "Stoofvlees", // 21 - r13
     "BlackMarlin", // 22 - r14
     "Velvet", // 23 - r15
     "Igel", // 24 - r16
