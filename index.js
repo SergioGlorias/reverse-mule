@@ -66,7 +66,7 @@ const paring = [
   [[seed[12], seed[13]], "pNG5UIWg"], // Match 2
   [[seed[3], seed[17]], "rQdSdJiI"], // Match 3
   [[seed[18], seed[19]], "ZpXSiTaf"], // Match 4
-  [[seed[0], seed[0]], "qNm2Urxl"], // Match 5
+  [[seed[2], seed[0]], "qNm2Urxl"], // Match 5
   [[seed[0], seed[0]], "ElBZMblR"], // Match 6
   [[seed[0], seed[0]], "JykQLa3c"], // Match 7
   [[seed[0], seed[0]], "Vmnr4qJW"], // Match 8
