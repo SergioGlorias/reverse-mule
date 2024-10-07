@@ -72,7 +72,7 @@ const paring = [
   [[seed[8], seed[31]], "Vmnr4qJW"], // Match 8
 
   // Quarterfinals
-  [[seed[0], seed[0]], "vOrgdhPg"], // Match 1
+  [[seed[1], seed[13]], "vOrgdhPg"], // Match 1
   [[seed[0], seed[0]], "DlXNHhie"], // Match 2
   [[seed[0], seed[0]], "3p0O0wlI"], // Match 3
   [[seed[0], seed[0]], "L44jWgVE"], // Match 4
