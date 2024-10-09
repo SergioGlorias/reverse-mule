@@ -79,7 +79,7 @@ const paring = [
 
   // Semifinals
   [[seed[1], seed[3]], "w4fjiksD"], // Match 1
-  [[seed[2], seed[0]], "mGHkYzya"], // Match 2
+  [[seed[2], seed[4]], "mGHkYzya"], // Match 2
 
   // Bronze & Final
   [[seed[0], seed[0]], "OIjRBuhM"], // Bronze
