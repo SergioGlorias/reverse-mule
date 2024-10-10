@@ -82,8 +82,10 @@ const paring = [
   [[seed[2], seed[4]], "mGHkYzya"], // Match 2
 
   // Bronze & Final
-  [[seed[0], seed[0]], "OIjRBuhM"], // Bronze
-  [[seed[0], seed[0]], "tdiYq8Vl"], // Final
+  [[seed[3], seed[4]], "OIjRBuhM"], // Bronze
+  [[seed[3], seed[2]], "OIjRBuhM"], // Bronze - alternative
+  [[seed[1], seed[2]], "tdiYq8Vl"], // Final
+  [[seed[1], seed[4]], "tdiYq8Vl"], // Final - alternative
 ];
 
 const fetchTCECpgn = () => {
