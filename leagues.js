@@ -7,6 +7,29 @@ dayjs.extend(duration);
 
 const litoken = process.env.LICHESS_TOKEN;
 
+const Rounds = {
+  entrance: [
+    "NA",
+    "ID_1", // 1
+  ],
+  league2: [
+    "NA",
+    "ID_1", // 1
+  ],
+  league1: [
+    "NA",
+    "ID_1", // 1
+  ],
+  divisionP: [
+    "NA",
+    "ID_1", // 1
+  ],
+  superfinal: [
+    "NA",
+    "ID_1", // 1
+  ],
+};
+
 const fetchTCECpgn = () => {
   return fetch("https://tcec-chess.com/evalbotelo/live.pgn", {
     headers: {
@@ -50,18 +73,25 @@ const run = async () => {
 
   console.log(`Event: ${event}`);
 
-  let e = event.toLowerCase()
+  let e = event.toLowerCase();
   if (e.includes("testing")) return;
   if (!e.includes("s27")) return;
 
-  let roundLeague
+  let roundLeague;
 
+  if (e.includes("entrace")) roundLeague = Rounds.entrance;
+  else if (e.includes("league 2")) roundLeague = Rounds.league2;
+  else if (e.includes("league 1")) roundLeague = Rounds.league1;
+  else if (e.includes("division")) roundLeague = Rounds.divisionP;
+  else if (e.includes("Superfinal")) roundLeague = Rounds.superfinal;
 
+  if (roundLeague == undefined) return;
 
   const roundN = pgn.headers.get("Round").split(".")[0];
 
   const white = pgn.headers.get("White");
   const black = pgn.headers.get("Black");
+  const tc = pgn.headers.get("TimeControl");
 
   console.log(`Match: ${white} - ${black}`);
 
@@ -78,8 +108,15 @@ const run = async () => {
         const minutes = time.minutes();
         const seconds = time.seconds();
         m.comments = [`[%clk ${hours}:${minutes}:${seconds}]`];
+      } else if (m.comments[0].includes("book,") && tc) {
+        let t = tc.split("+")[0];
+        const time = dayjs.duration(parseInt(t), "seconds");
+        const hours = time.hours();
+        const minutes = time.minutes();
+        const seconds = time.seconds();
+        m.comments = [`[%clk ${hours}:${minutes}:${seconds}]`];
       } else {
-        m.comments = []
+        m.comments = [];
       }
     }
 
@@ -88,17 +125,12 @@ const run = async () => {
 
   const pgg = {
     headers: pgn.headers,
-    moves: new Node()
+    moves: new Node(),
   };
 
-  let node = pgg.moves
+  let node = pgg.moves;
 
-  while (node.children.length) {
-    const child = node.children[0];
-    node = child;
-  }
-
-  moves.forEach(d => {
+  moves.forEach((d) => {
     const newNode = new ChildNode(d);
     node.children = [newNode];
     node = newNode;
@@ -108,14 +140,13 @@ const run = async () => {
 
   console.log(pgnText);
 
-  /*const r = await pushPGN(pgnText, id[1]);
+  const r = await pushPGN(pgnText, roundLeague[roundN]);
 
   if (r) console.info(r);
-  else console.error("Fail Push");*/
+  else console.error("Fail Push");
 
   console.log("=========");
 };
 
 console.log("===== CODE STARTED =====");
-//setInterval(() => run(), 3 * 1000);
-run();
+setInterval(() => run(), 3 * 1000);
