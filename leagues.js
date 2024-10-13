@@ -144,4 +144,4 @@ const run = async () => {
 };
 
 console.log("===== CODE STARTED =====");
-setInterval(() => run(), 3 * 1000);
+setInterval(() => run(), 5 * 1000);
