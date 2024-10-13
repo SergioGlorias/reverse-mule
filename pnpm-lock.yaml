@@ -11,6 +11,9 @@ importers:
       chessops:
         specifier: ^0.14.1
         version: 0.14.1
+      dayjs:
+        specifier: ^1.11.13
+        version: 1.11.13
 
 packages:
 
@@ -20,6 +23,9 @@ packages:
   chessops@0.14.1:
     resolution: {integrity: sha512-CnMcfypDVrl/+MkErK0YMAEvivAAnUQ/2f32C54F9HbmDVEDjvoXJYLnS//+4HWGLqGA5+yDs+Y2T0gsxxLgpQ==}
 
+  dayjs@1.11.13:
+    resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
+
 snapshots:
 
   '@badrap/result@0.2.13': {}
@@ -27,3 +33,5 @@ snapshots:
   chessops@0.14.1:
     dependencies:
       '@badrap/result': 0.2.13
+
+  dayjs@1.11.13: {}

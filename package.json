@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chessops": "^0.14.1"
+    "chessops": "^0.14.1",
+    "dayjs": "^1.11.13"
   },
   "type": "module"
 }
