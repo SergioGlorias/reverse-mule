@@ -9,23 +9,18 @@ const litoken = process.env.LICHESS_TOKEN;
 
 const Rounds = {
   entrance: [
-    "NA",
     "ID_1", // 1
   ],
   league2: [
-    "NA",
     "ID_1", // 1
   ],
   league1: [
-    "NA",
     "ID_1", // 1
   ],
   divisionP: [
-    "NA",
     "ID_1", // 1
   ],
   superfinal: [
-    "NA",
     "ID_1", // 1
   ],
 };
@@ -140,7 +135,7 @@ const run = async () => {
 
   console.log(pgnText);
 
-  const r = await pushPGN(pgnText, roundLeague[roundN]);
+  const r = await pushPGN(pgnText, roundLeague[parseInt(roundN)-1]);
 
   if (r) console.info(r);
   else console.error("Fail Push");
