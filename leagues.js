@@ -240,7 +240,7 @@ const run = async () => {
 
   let e = event.toLowerCase();
   //if (e.includes("testing")) return;
-  if (!e.includes("s27")) return;
+  if (!e.includes("27")) return;
 
   const roundN = pgn.headers.get("Round").split(".")[0];
 
