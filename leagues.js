@@ -239,7 +239,7 @@ const run = async () => {
   console.log(`Event: ${event}`);
 
   let e = event.toLowerCase();
-  if (e.includes("testing")) return;
+  //if (e.includes("testing")) return;
   if (!e.includes("27")) return;
 
   const roundN = pgn.headers.get("Round").split(".")[0];
@@ -255,7 +255,7 @@ const run = async () => {
   else if (e.includes("superfinal")) {
     if (aN < 100) roundLeague = Rounds.superfinal[1];
     //else roundLeague = Rounds.superfinal[2];
-  }
+  } else if (e.includes("testing")) roundLeague = "96p3n5ji";
 
   if (roundLeague == undefined) return;
 
