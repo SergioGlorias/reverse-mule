@@ -248,7 +248,7 @@ const run = async () => {
 
   let aN = parseInt(roundN) - 1;
 
-  if (e.includes("entrace")) roundLeague = Rounds.entrance[aN];
+  if (e.includes("entrance")) roundLeague = Rounds.entrance[aN];
   else if (e.includes("league 2")) roundLeague = Rounds.league2[aN];
   else if (e.includes("league 1")) roundLeague = Rounds.league1[aN];
   else if (e.includes("division")) roundLeague = Rounds.divisionP[aN];
