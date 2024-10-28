@@ -265,6 +265,15 @@ const run = async () => {
 
   console.log(`Match: ${white} - ${black}`);
 
+  const terminationDetails = pgn.headers.get("TerminationDetails");
+  const termination = pgn.headers.get("Termination");
+
+
+  if (terminationDetails) {
+    if (termination) pgn.headers.set("Termination", `${termination} - ${terminationDetails}`)
+    else pgn.headers.set("Termination", terminationDetails)
+  }
+
   const moves = [];
 
   for (let m of pgn.moves.mainline()) {
