@@ -226,7 +226,10 @@ const pushPGN = (pgn, id) => {
     },
   })
     .then((res) => res.json())
-    .catch(() => null);
+    .catch((res) => {
+      console.error(res)
+      return null
+    });
 };
 
 const run = async () => {
