@@ -217,7 +217,7 @@ const fetchTCECpgn = () => {
 };
 
 const pushPGN = (pgn, id) => {
-  return fetch(`https://lichess.org/broadcast/round/${id}/push`, {
+  return fetch(`https://lichess.org/api/broadcast/round/${id}/push`, {
     body: pgn,
     method: "POST",
     headers: {
