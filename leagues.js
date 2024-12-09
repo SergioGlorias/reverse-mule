@@ -225,7 +225,10 @@ const pushPGN = (pgn, id) => {
       "User-Agent": "Reverse Mule by SergioGlorias/reverse-mule",
     },
   })
-    .then((res) => res.json())
+    .then((res) => {
+      console.log(res.status)
+      return res.json()
+    })
     .catch((res) => {
       console.error(res)
       return null
