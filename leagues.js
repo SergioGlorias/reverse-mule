@@ -259,7 +259,8 @@ const run = async () => {
   else if (e.includes("league 1")) roundLeague = Rounds.league1[aN];
   else if (e.includes("division")) roundLeague = Rounds.divisionP[aN];
   else if (e.includes("superfinal")) {
-    roundLeague = Rounds.superfinal[1];
+    if (aN < 100) roundLeague = Rounds.superfinal[0];
+    //else roundLeague = Rounds.superfinal[1];
   }
 
   if (roundLeague == undefined) return;
