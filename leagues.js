@@ -193,9 +193,7 @@ const Rounds = {
   superfinal: [
     "MtK1cFb4", // 1
   ],
-  bonus: [
-    "EsxeRyn1"
-  ]
+  bonus: ["Gw2pKKhE"],
 };
 
 const fetchTCECpgn = () => {
@@ -229,12 +227,12 @@ const pushPGN = (pgn, id) => {
     },
   })
     .then((res) => {
-      console.log(res.status)
-      return res.json()
+      console.log(res.status);
+      return res.json();
     })
     .catch((res) => {
-      console.error(res)
-      return null
+      console.error(res);
+      return null;
     });
 };
 
@@ -265,6 +263,7 @@ const run = async () => {
     if (aN < 100) roundLeague = Rounds.superfinal[0];
     //else roundLeague = Rounds.superfinal[1];
   } else if (e.includes("altsufi kibitzer ponder bonus"))
+    roundLeague = Rounds.bonus[0];
 
   if (roundLeague == undefined) return;
 
@@ -277,10 +276,10 @@ const run = async () => {
   const terminationDetails = pgn.headers.get("TerminationDetails");
   const termination = pgn.headers.get("Termination");
 
-
   if (terminationDetails) {
-    if (termination) pgn.headers.set("Termination", `${termination} - ${terminationDetails}`)
-    else pgn.headers.set("Termination", terminationDetails)
+    if (termination)
+      pgn.headers.set("Termination", `${termination} - ${terminationDetails}`);
+    else pgn.headers.set("Termination", terminationDetails);
   }
 
   const moves = [];

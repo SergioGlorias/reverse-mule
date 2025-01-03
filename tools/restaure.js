@@ -3,8 +3,7 @@ import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration.js";
 dayjs.extend(duration);
 
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const litoken = process.env.LICHESS_TOKEN;
 
@@ -194,6 +193,7 @@ const Rounds = {
   superfinal: [
     "s0NWCN9q", // 1
   ],
+  bonus: ["Gw2pKKhE"],
 };
 
 const fetchTCECpgn = () => {
@@ -220,7 +220,7 @@ const fetchTCECpgn = () => {
 };
 
 const pushPGN = (pgn, id) => {
-  return fetch(`https://lichess.org/broadcast/round/${id}/push`, {
+  return fetch(`https://lichess.org/api/broadcast/round/${id}/push`, {
     body: pgn,
     method: "POST",
     headers: {
@@ -228,12 +228,14 @@ const pushPGN = (pgn, id) => {
       "User-Agent": "Reverse Mule by SergioGlorias/reverse-mule",
     },
   })
-    .then((res) => res.json())
-    .then(res => {
-      console.assert(res)
-      return res
+    .then((res) => {
+      console.log(res.status);
+      return res.json();
     })
-    .catch(() => null);
+    .catch((res) => {
+      console.error(res);
+      return null;
+    });
 };
 
 const run = async () => {
@@ -268,7 +270,8 @@ const run = async () => {
     else if (e.includes("superfinal")) {
       if (aN < 100) roundLeague = Rounds.superfinal[1];
       //else roundLeague = Rounds.superfinal[2];
-    }
+    } else if (e.includes("altsufi kibitzer ponder bonus"))
+      roundLeague = Rounds.bonus[0];
 
     if (roundLeague == undefined) continue;
 
@@ -342,7 +345,7 @@ const run = async () => {
 
     console.log("=========");
 
-    await delay(5000)
+    await delay(5000);
   }
 };
 
