@@ -193,6 +193,9 @@ const Rounds = {
   superfinal: [
     "MtK1cFb4", // 1
   ],
+  bonus: [
+    "EsxeRyn1"
+  ]
 };
 
 const fetchTCECpgn = () => {
@@ -261,7 +264,7 @@ const run = async () => {
   else if (e.includes("superfinal")) {
     if (aN < 100) roundLeague = Rounds.superfinal[0];
     //else roundLeague = Rounds.superfinal[1];
-  }
+  } else if (e.includes("altsufi kibitzer ponder bonus"))
 
   if (roundLeague == undefined) return;
 
