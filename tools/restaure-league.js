@@ -208,13 +208,6 @@ const fetchTCECpgn = () => {
         return res.text();
       })
       .then((pgn) => parsePgn(pgn))
-      /*.then((pgn) => {
-      pgn.headers.set("WhiteTitle", "BOT");
-      pgn.headers.set("BlackTitle", "BOT");
-      pgn.headers.set("WhiteFideId", "0");
-      pgn.headers.set("BlackFideId", "0");
-      return pgn;
-    })*/
       .catch(() => null)
   );
 };
