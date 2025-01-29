@@ -4,7 +4,6 @@ on:
       - main
     paths-ignore: 
       - 'tools/**'
-      - '.github/**'
 
 jobs:
     deploy_job:
@@ -19,6 +18,6 @@ jobs:
             username: ${{ secrets.FTP_USERNAME }}
             server: ${{ secrets.FTP_SERVER }}
             port: ${{ secrets.FTP_PORT }}
-            local_path: './*.js'
+            local_path: './*'
             remote_path: ${{ secrets.FTP_REMOTE_PATH }}
             password: ${{ secrets.FTP_PASSWORD }}
