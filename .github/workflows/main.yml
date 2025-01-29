@@ -19,6 +19,6 @@ jobs:
             username: ${{ secrets.FTP_USERNAME }}
             server: ${{ secrets.FTP_SERVER }}
             port: ${{ secrets.FTP_PORT }}
-            local_path: './leagues.js'
+            local_path: './*.js'
             remote_path: ${{ secrets.FTP_REMOTE_PATH }}
             password: ${{ secrets.FTP_PASSWORD }}
