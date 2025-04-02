@@ -121,7 +121,7 @@ const run = async () => {
 
     let e = event.toLowerCase();
     if (e.includes("testing")) continue;
-    if (!e.includes("4K V")) return;
+    if (!e.includes("4k v")) continue;
 
     const roundN = pgn.headers.get("Round").split(".")[0];
 
@@ -129,7 +129,7 @@ const run = async () => {
 
     let aN = parseInt(roundN) - 1;
 
-    if (e === "TCEC Season 28 - 4K V") roundLeague = Rounds.pool[aN];
+    if (e === "TCEC Season 28 - 4K V".toLowerCase()) roundLeague = Rounds.pool[aN];
     else roundLeague = Rounds.final[aN];
 
     if (roundLeague == undefined) continue;
