@@ -66,7 +66,7 @@ const Rounds = {
     "6sE4LxNs",
     "UBiF1jUa",
   ],
-  final: [],
+  final: ["zFmiSbjV"],
 };
 
 const fetchTCECpgn = () => {
@@ -130,7 +130,7 @@ const run = async () => {
     let aN = parseInt(roundN) - 1;
 
     if (e === "TCEC Season 28 - 4K V".toLowerCase()) roundLeague = Rounds.pool[aN];
-    else roundLeague = Rounds.final[aN];
+    else roundLeague = Rounds.final[0];
 
     if (roundLeague == undefined) continue;
 
