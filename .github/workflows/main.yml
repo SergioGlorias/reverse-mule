@@ -2,8 +2,8 @@ on:
   push:
     branches:
       - main
-    paths-ignore: 
-      - 'tools/**'
+    # paths-ignore: 
+    #   - 'tools/**'
 
 jobs:
     deploy_job:

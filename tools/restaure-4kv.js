@@ -69,6 +69,22 @@ const Rounds = {
   final: [],
 };
 
+const fetchTCECpgn = () => {
+  return (
+    fetch("https://tcec-chess.com/evalbotelo/archive.pgn", {
+      headers: {
+        "User-Agent": "github.com/SergioGlorias/reverse-mule",
+      },
+    })
+      .then((res) => {
+        if (res.status !== 200) return null;
+        return res.text();
+      })
+      .then((pgn) => parsePgn(pgn))
+      .catch(() => null)
+  );
+};
+
 const pushPGN = (pgn, id) => {
   return fetch(`https://lichess.org/api/broadcast/round/${id}/push`, {
     body: pgn,
