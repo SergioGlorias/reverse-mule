@@ -129,7 +129,7 @@ const run = async () => {
   let aN = parseInt(roundN) - 1;
 
   if (e === "TCEC Season 28 - 4K V".toLowerCase()) roundLeague = Rounds.pool[aN];
-  else roundLeague = Rounds.final[0];
+  else if (e.includes("MiniFinal".toLowerCase())) roundLeague = Rounds.final[0];
 
   if (roundLeague == undefined) return;
 
