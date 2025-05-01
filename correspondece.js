@@ -52,8 +52,8 @@ const run = async () => {
 
     const gamesPGN = roundGames
       .map((game) => {
-        pgn.headers.set("WhiteFideId", "0");
-        pgn.headers.set("BlackFideId", "0");
+        game.headers.set("WhiteFideId", "0");
+        game.headers.set("BlackFideId", "0");
         return makePgn(game);
       })
       .join("\n\n");
