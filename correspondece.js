@@ -60,5 +60,6 @@ const run = async () => {
     await delay(1000);
   }
 };
-
+run();
+// 5 minutes
 setInterval(()=> run(), 5 * 60 * 1000);
