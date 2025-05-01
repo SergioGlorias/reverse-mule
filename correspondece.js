@@ -50,7 +50,13 @@ const run = async () => {
     const roundGames = groupedGames[i];
     const roundId = roundsIds[i];
 
-    const gamesPGN = roundGames.map(game => makePgn(game)).join("\n\n");
+    const gamesPGN = roundGames
+      .map((game) => {
+        pgn.headers.set("WhiteFideId", "0");
+        pgn.headers.set("BlackFideId", "0");
+        return makePgn(game);
+      })
+      .join("\n\n");
 
     const r = await pushPGN(gamesPGN, roundId);
 
@@ -62,4 +68,4 @@ const run = async () => {
 };
 run();
 // 5 minutes
-setInterval(()=> run(), 5 * 60 * 1000);
+setInterval(() => run(), 5 * 60 * 1000);
