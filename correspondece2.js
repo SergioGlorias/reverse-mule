@@ -68,4 +68,4 @@ const run = async () => {
 };
 run();
 // 5 minutes
-setInterval(() => run(), 5 * 60 * 1000);
+setInterval(() => run(), 15 * 60 * 1000);
