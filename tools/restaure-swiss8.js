@@ -170,7 +170,7 @@ const run = async () => {
       roundLeague = Rounds.playoff3[aN];
     else if (e === "TCEC Season 28 - Category 2 Playoff".toLowerCase())
       roundLeague = Rounds.playoff2[aN];
-    else if (e === "TCEC Season 28 -  Swiss 8".toLowerCase())
+    else if (e === "TCEC Season 28 - Swiss 8".toLowerCase())
       roundLeague = Rounds.swiss[aN];
 
     if (roundLeague == undefined) continue;
