@@ -25,6 +25,7 @@ const getPGN = async (iccfurl) => {
     });
     if (!res.ok) return null;
     const text = await res.text();
+    if (!text.trim()) return null;
     return parsePgn(text);
   } catch {
     return null;
