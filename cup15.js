@@ -1,7 +1,8 @@
 import { parsePgn, makePgn, Node, ChildNode } from "chessops/pgn";
 import process from "node:process";
+
 import dayjs from "dayjs";
-import duration from "dayjs/plugin/duration";
+import duration from "dayjs/plugin/duration.js";
 dayjs.extend(duration);
 
 const litoken = process.env.LICHESS_TOKEN;
