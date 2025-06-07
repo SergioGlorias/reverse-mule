@@ -44,48 +44,48 @@ const seed = [
 
 const paring = [
   // Round 32
-  [[seed[1], seed[9]], "kDvuBQvK"], // Match 1
-  [[seed[10], seed[11]], "L1p0Pk3o"], // Match 2
-  [[seed[5], seed[12]], "u8ZUXrjz"], // Match 3
-  [[seed[13], seed[14]], "JhUClQ3q"], // Match 4
-  [[seed[3], seed[15]], "sA7SQoPk"], // Match 5
-  [[seed[16], seed[17]], "BlkYnKOD"], // Match 6
-  [[seed[7], seed[18]], "d4dZ7818"], // Match 7
-  [[seed[19], seed[20]], "W4tWaIuR"], // Match 8
-  [[seed[2], seed[21]], "bnpC1kCW"], // Match 9
-  [[seed[22], seed[23]], "HSn0n8nh"], // Match 10
-  [[seed[6], seed[24]], "BypTJAy1"], // Match 11
-  [[seed[25], seed[26]], "G7PKJ7Zx"], // Match 12
-  [[seed[4], seed[27]], "cIjRCsxf"], // Match 13
-  [[seed[28], seed[29]], "7bCF3k2b"], // Match 14
-  [[seed[8], seed[30]], "0J6ubcQ4"], // Match 15
-  [[seed[31], seed[32]], "621TlrK9"], // Match 16
+  [[seed[1], seed[9]], "Q56XqQTZ"], // Match 1
+  [[seed[10], seed[11]], "qcSVN8wb"], // Match 2
+  [[seed[5], seed[12]], "LgYG2dAl"], // Match 3
+  [[seed[13], seed[14]], "4sqKqFP6"], // Match 4
+  [[seed[3], seed[15]], "q6rkAaMO"], // Match 5
+  [[seed[16], seed[17]], "lqTa6Jug"], // Match 6
+  [[seed[7], seed[18]], "cy7PmKty"], // Match 7
+  [[seed[19], seed[20]], "Y3hdAN22"], // Match 8
+  [[seed[2], seed[21]], "iN2xV42G"], // Match 9
+  [[seed[22], seed[23]], "Cm7DSWv5"], // Match 10
+  [[seed[6], seed[24]], "pgZZsKdS"], // Match 11
+  [[seed[25], seed[26]], "IrhoSsHN"], // Match 12
+  [[seed[4], seed[27]], "ndR0kGRs"], // Match 13
+  [[seed[28], seed[29]], "ecQzqoWm"], // Match 14
+  [[seed[8], seed[30]], "SIYEwiO5"], // Match 15
+  [[seed[31], seed[32]], "nsdhku8R"], // Match 16
 
   //Round 16
-  [[seed[0], seed[0]], "B58ovSQU"], // Match 1
-  [[seed[0], seed[0]], "pNG5UIWg"], // Match 2
-  [[seed[0], seed[0]], "rQdSdJiI"], // Match 3
-  [[seed[0], seed[0]], "ZpXSiTaf"], // Match 4
-  [[seed[0], seed[0]], "qNm2Urxl"], // Match 5
-  [[seed[0], seed[0]], "ElBZMblR"], // Match 6
-  [[seed[0], seed[0]], "JykQLa3c"], // Match 7
-  [[seed[0], seed[0]], "Vmnr4qJW"], // Match 8
+  [[seed[0], seed[0]], "e2OeA4DF"], // Match 1
+  [[seed[0], seed[0]], "CbiO5yLw"], // Match 2
+  [[seed[0], seed[0]], "A6lWj6Du"], // Match 3
+  [[seed[0], seed[0]], "tZt9Lzkz"], // Match 4
+  [[seed[0], seed[0]], "LwxGkx22"], // Match 5
+  [[seed[0], seed[0]], "J7bCRq4m"], // Match 6
+  [[seed[0], seed[0]], "PCIH17lX"], // Match 7
+  [[seed[0], seed[0]], "ZwuoDGte"], // Match 8
 
   // Quarterfinals
-  [[seed[0], seed[0]], "vOrgdhPg"], // Match 1
-  [[seed[0], seed[0]], "DlXNHhie"], // Match 2
-  [[seed[0], seed[0]], "3p0O0wlI"], // Match 3
-  [[seed[0], seed[0]], "L44jWgVE"], // Match 4
+  [[seed[0], seed[0]], "wSLt7kAA"], // Match 1
+  [[seed[0], seed[0]], "uqaaiUUd"], // Match 2
+  [[seed[0], seed[0]], "1uoshGBs"], // Match 3
+  [[seed[0], seed[0]], "CFFTv2dy"], // Match 4
 
   // Semifinals
-  [[seed[0], seed[0]], "w4fjiksD"], // Match 1
-  [[seed[0], seed[0]], "mGHkYzya"], // Match 2
+  [[seed[0], seed[0]], "6wRXB7bM"], // Match 1
+  [[seed[0], seed[0]], "8fBXtCYx"], // Match 2
 
   // Bronze & Final
-  [[seed[0], seed[0]], "OIjRBuhM"], // Bronze
-  [[seed[0], seed[0]], "OIjRBuhM"], // Bronze - alternative
-  [[seed[0], seed[0]], "tdiYq8Vl"], // Final
-  [[seed[0], seed[0]], "tdiYq8Vl"], // Final - alternative
+  [[seed[0], seed[0]], "HeJaCCEf"], // Bronze
+  [[seed[0], seed[0]], "HeJaCCEf"], // Bronze - alternative
+  [[seed[0], seed[0]], "niV1sF1a"], // Final
+  [[seed[0], seed[0]], "niV1sF1a"], // Final - alternative
 ];
 
 const fetchTCECpgn = () => {
@@ -118,7 +118,7 @@ const pushPGN = (pgn, id) => {
       "User-Agent": "Reverse Mule by SergioGlorias/reverse-mule",
     },
   })
-    .then((res) => res.json())
+    .then((res) => res.text())
     .catch(() => null);
 };
 
@@ -131,7 +131,7 @@ const run = async () => {
 
   console.log(`Event: ${event}`);
 
-  if (!event.toLowerCase().includes("cup 14")) return;
+  if (!event.toLowerCase().includes("cup 15")) return;
 
   if (event.toLowerCase().includes("testing")) return;
 
@@ -139,30 +139,24 @@ const run = async () => {
 
   pgn.headers.set("Round", roundN.toString());
 
-  const white = pgn.headers.get("White");
-  const black = pgn.headers.get("Black");
+  const white = pgn.headers.get("White") || "",
+    black = pgn.headers.get("Black") || "";
 
   console.log(`Match: ${white} - ${black}`);
 
-  const id = paring.find(
-    (p) =>
-      p[0].filter(
-        (e) =>
-          white.toLowerCase().includes(e.toLowerCase()) ||
-          black.toLowerCase().includes(e.toLowerCase())
-      ).length == 2
+  const id = paring.find((p) =>
+    p[0].every((e) =>
+      [white, black].some((name) =>
+        name.toLowerCase().includes(e.toLowerCase())
+      )
+    )
   );
 
   console.log(`ID: ${id}`);
 
   if (!id) return;
-
-  const pgnText = makePgn(pgn);
-
-  const r = await pushPGN(pgnText, id[1]);
-
-  if (r) console.info(r);
-  else console.error("Fail Push");
+  const res = await pushPGN(makePgn(pgn), id[1]);
+  console[res ? "info" : "error"](res || "Fail Push");
 
   console.log("=========");
 };
