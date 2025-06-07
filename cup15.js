@@ -220,6 +220,7 @@ const run = async () => {
 
 const loop = async () => {
   while (true) {
+    await run();
     await new Promise(res => setTimeout(res, 3000));
   }
 };
