@@ -1,5 +1,8 @@
-import { parsePgn, makePgn } from "chessops/pgn";
+import { parsePgn, makePgn, Node, ChildNode } from "chessops/pgn";
 import process from "node:process";
+import dayjs from "dayjs";
+import duration from "dayjs/plugin/duration";
+dayjs.extend(duration);
 
 const litoken = process.env.LICHESS_TOKEN;
 
@@ -89,7 +92,7 @@ const paring = [
 ];
 
 const fetchTCECpgn = () => {
-  return fetch("https://tcec-chess.com/evalbotelo/plainlive.pgn", {
+  return fetch("https://tcec-chess.com/evalbotelo/live.pgn", {
     headers: {
       "User-Agent": "github.com/SergioGlorias/reverse-mule",
     },
@@ -123,6 +126,10 @@ const pushPGN = (pgn, id) => {
 };
 
 const run = async () => {
+  if (!litoken) {
+    console.error("LICHESS_TOKEN não definido!");
+    process.exit(1);
+  }
   console.log("=== FETCH ===");
   const pgn = await fetchTCECpgn();
   if (!pgn) return;
@@ -139,10 +146,60 @@ const run = async () => {
 
   pgn.headers.set("Round", roundN.toString());
 
-  const white = pgn.headers.get("White") || "",
-    black = pgn.headers.get("Black") || "";
+  const white = pgn.headers.get("White");
+  const black = pgn.headers.get("Black");
+  const tc = pgn.headers.get("TimeControl");
 
   console.log(`Match: ${white} - ${black}`);
+
+  const terminationDetails = pgn.headers.get("TerminationDetails");
+  const termination = pgn.headers.get("Termination");
+
+  if (terminationDetails) {
+    if (termination)
+      pgn.headers.set("Termination", `${termination} - ${terminationDetails}`);
+    else pgn.headers.set("Termination", terminationDetails);
+  }
+
+  const moves = [];
+
+  for (let m of pgn.moves.mainline()) {
+    let clk = null;
+    if (m.comments && m.comments[0]) {
+      const comment = m.comments[0];
+      const tlMatch = comment.match(/tl=(\d+)/);
+      if (tlMatch) {
+        clk = dayjs.duration(Number(tlMatch[1]), "milliseconds");
+      } else if (comment.includes("book,") && tc) {
+        const t = tc.split("+")[0];
+        clk = dayjs.duration(Number(t), "seconds");
+      }
+    }
+    if (clk) {
+      const h = clk.hours();
+      const mnt = clk.minutes();
+      const s = clk.seconds();
+      m.comments = [`[%clk ${h}:${mnt}:${s}]`];
+    } else if (m.comments) {
+      m.comments = [];
+    }
+    moves.push(m);
+  }
+
+  const pgg = {
+    headers: pgn.headers,
+    moves: new Node(),
+  };
+
+  let node = pgg.moves;
+
+  moves.forEach((d) => {
+    const newNode = new ChildNode(d);
+    node.children = [newNode];
+    node = newNode;
+  });
+
+  const pgnText = makePgn(pgg);
 
   const id = paring.find((p) =>
     p[0].every((e) =>
@@ -155,11 +212,17 @@ const run = async () => {
   console.log(`ID: ${id}`);
 
   if (!id) return;
-  const res = await pushPGN(makePgn(pgn), id[1]);
+  const res = await pushPGN(pgnText, id[1]);
   console[res ? "info" : "error"](res || "Fail Push");
 
   console.log("=========");
 };
 
+const loop = async () => {
+  while (true) {
+    await new Promise(res => setTimeout(res, 3000));
+  }
+};
+
 console.log("===== CODE STARTED =====");
-setInterval(() => run(), 3 * 1000);
+loop();
