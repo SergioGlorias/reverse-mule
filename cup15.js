@@ -66,9 +66,9 @@ const paring = [
   [[seed[31], seed[32]], "nsdhku8R"], // Match 16
 
   //Round 16
-  [[seed[0], seed[0]], "e2OeA4DF"], // Match 1
-  [[seed[0], seed[0]], "CbiO5yLw"], // Match 2
-  [[seed[0], seed[0]], "A6lWj6Du"], // Match 3
+  [[seed[1], seed[11]], "e2OeA4DF"], // Match 1
+  [[seed[5], seed[14]], "CbiO5yLw"], // Match 2
+  [[seed[3], seed[0]], "A6lWj6Du"], // Match 3
   [[seed[0], seed[0]], "tZt9Lzkz"], // Match 4
   [[seed[0], seed[0]], "LwxGkx22"], // Match 5
   [[seed[0], seed[0]], "J7bCRq4m"], // Match 6
