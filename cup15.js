@@ -48,28 +48,28 @@ const seed = [
 
 const paring = [
   // Round 32
-  [[seed[1], seed[9]], "Q56XqQTZ"], // Match 1
-  [[seed[10], seed[11]], "qcSVN8wb"], // Match 2
-  [[seed[5], seed[12]], "LgYG2dAl"], // Match 3
-  [[seed[13], seed[14]], "4sqKqFP6"], // Match 4
-  [[seed[3], seed[15]], "q6rkAaMO"], // Match 5
-  [[seed[16], seed[17]], "lqTa6Jug"], // Match 6
-  [[seed[7], seed[18]], "cy7PmKty"], // Match 7
-  [[seed[19], seed[20]], "Y3hdAN22"], // Match 8
-  [[seed[2], seed[21]], "iN2xV42G"], // Match 9
-  [[seed[22], seed[23]], "Cm7DSWv5"], // Match 10
-  [[seed[6], seed[24]], "pgZZsKdS"], // Match 11
-  [[seed[25], seed[26]], "IrhoSsHN"], // Match 12
-  [[seed[4], seed[27]], "ndR0kGRs"], // Match 13
-  [[seed[28], seed[29]], "ecQzqoWm"], // Match 14
-  [[seed[8], seed[30]], "SIYEwiO5"], // Match 15
-  [[seed[31], seed[32]], "nsdhku8R"], // Match 16
+  [[seed[1], seed[9]], "Q56XqQTZ"], // Match 1: Stockfish vs BlackMarlin
+  [[seed[10], seed[11]], "qcSVN8wb"], // Match 2: Reckless vs Ginkgo
+  [[seed[5], seed[12]], "LgYG2dAl"], // Match 3: PlentyChess vs sirius
+  [[seed[13], seed[14]], "4sqKqFP6"], // Match 4: rofChade vs Stormphrax
+  [[seed[3], seed[15]], "q6rkAaMO"], // Match 5: Berserk vs Uralochka
+  [[seed[16], seed[17]], "lqTa6Jug"], // Match 6: Horsie vs Ceres
+  [[seed[7], seed[18]], "cy7PmKty"], // Match 7: Ethereal vs Arasan
+  [[seed[19], seed[20]], "Y3hdAN22"], // Match 8: Viridithas vs Clover
+  [[seed[2], seed[21]], "iN2xV42G"], // Match 9: LCZero vs RubiChess
+  [[seed[22], seed[23]], "Cm7DSWv5"], // Match 10: Velvet vs Booot
+  [[seed[6], seed[24]], "pgZZsKdS"], // Match 11: KomodoDragon vs Stoofvlees
+  [[seed[25], seed[26]], "IrhoSsHN"], // Match 12: Caissa vs Igel
+  [[seed[4], seed[27]], "ndR0kGRs"], // Match 13: Obsidian vs Renegade
+  [[seed[28], seed[29]], "ecQzqoWm"], // Match 14: ScopioNN vs Revenge
+  [[seed[8], seed[30]], "SIYEwiO5"], // Match 15: Integral vs Starzix
+  [[seed[31], seed[32]], "nsdhku8R"], // Match 16: Seer vs Altair
 
   //Round 16
-  [[seed[1], seed[11]], "e2OeA4DF"], // Match 1
-  [[seed[5], seed[14]], "CbiO5yLw"], // Match 2
-  [[seed[3], seed[0]], "A6lWj6Du"], // Match 3
-  [[seed[0], seed[0]], "tZt9Lzkz"], // Match 4
+  [[seed[1], seed[11]], "e2OeA4DF"], // Match 1: Stockfish vs Ginkgo
+  [[seed[5], seed[14]], "CbiO5yLw"], // Match 2: PlentyChess vs Stormphrax
+  [[seed[3], seed[17]], "A6lWj6Du"], // Match 3: Berserk vs Ceres
+  [[seed[7], seed[0]], "tZt9Lzkz"], // Match 4
   [[seed[0], seed[0]], "LwxGkx22"], // Match 5
   [[seed[0], seed[0]], "J7bCRq4m"], // Match 6
   [[seed[0], seed[0]], "PCIH17lX"], // Match 7
