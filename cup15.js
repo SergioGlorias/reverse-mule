@@ -69,14 +69,14 @@ const paring = [
   [[seed[1], seed[11]], "e2OeA4DF"], // Match 1: Stockfish vs Ginkgo
   [[seed[5], seed[14]], "CbiO5yLw"], // Match 2: PlentyChess vs Stormphrax
   [[seed[3], seed[17]], "A6lWj6Du"], // Match 3: Berserk vs Ceres
-  [[seed[7], seed[0]], "tZt9Lzkz"], // Match 4
-  [[seed[0], seed[0]], "LwxGkx22"], // Match 5
-  [[seed[0], seed[0]], "J7bCRq4m"], // Match 6
-  [[seed[0], seed[0]], "PCIH17lX"], // Match 7
-  [[seed[0], seed[0]], "ZwuoDGte"], // Match 8
+  [[seed[7], seed[19]], "tZt9Lzkz"], // Match 4: Ethereal vs Viridithas
+  [[seed[2], seed[23]], "LwxGkx22"], // Match 5: LCZero vs Booot
+  [[seed[6], seed[25]], "J7bCRq4m"], // Match 6: KomodoDragon vs Caissa
+  [[seed[4], seed[29]], "PCIH17lX"], // Match 7: Obsidian vs Revenge
+  [[seed[8], seed[31]], "ZwuoDGte"], // Match 8: Integral vs Seer
 
   // Quarterfinals
-  [[seed[0], seed[0]], "wSLt7kAA"], // Match 1
+  [[seed[1], seed[0]], "wSLt7kAA"], // Match 1
   [[seed[0], seed[0]], "uqaaiUUd"], // Match 2
   [[seed[0], seed[0]], "1uoshGBs"], // Match 3
   [[seed[0], seed[0]], "CFFTv2dy"], // Match 4
