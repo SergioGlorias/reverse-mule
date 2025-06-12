@@ -76,7 +76,7 @@ const paring = [
   [[seed[8], seed[31]], "ZwuoDGte"], // Match 8: Integral vs Seer
 
   // Quarterfinals
-  [[seed[1], seed[0]], "wSLt7kAA"], // Match 1
+  [[seed[1], seed[5]], "wSLt7kAA"], // Match 1: Stockfish vs PlentyChess
   [[seed[0], seed[0]], "uqaaiUUd"], // Match 2
   [[seed[0], seed[0]], "1uoshGBs"], // Match 3
   [[seed[0], seed[0]], "CFFTv2dy"], // Match 4
