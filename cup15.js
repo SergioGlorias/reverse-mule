@@ -78,8 +78,8 @@ const paring = [
   // Quarterfinals
   [[seed[1], seed[5]], "wSLt7kAA"], // Match 1: Stockfish vs PlentyChess
   [[seed[3], seed[7]], "uqaaiUUd"], // Match 2: Berserk vs Ethereal
-  [[seed[0], seed[0]], "1uoshGBs"], // Match 3
-  [[seed[0], seed[0]], "CFFTv2dy"], // Match 4
+  [[seed[2], seed[25]], "1uoshGBs"], // Match 3: LCZero vs Caissa
+  [[seed[4], seed[8]], "CFFTv2dy"], // Match 4: Obsidian vs Integral
 
   // Semifinals
   [[seed[0], seed[0]], "6wRXB7bM"], // Match 1
