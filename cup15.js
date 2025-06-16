@@ -86,10 +86,10 @@ const paring = [
   [[seed[2], seed[4]], "8fBXtCYx"], // Match 2: LCZero vs Obsidian
 
   // Bronze & Final
-  [[seed[0], seed[0]], "HeJaCCEf"], // Bronze
-  [[seed[0], seed[0]], "HeJaCCEf"], // Bronze - alternative
-  [[seed[0], seed[0]], "niV1sF1a"], // Final
-  [[seed[0], seed[0]], "niV1sF1a"], // Final - alternative
+  [[seed[3], seed[4]], "HeJaCCEf"], // Bronze: Berserk vs Obsidian
+  [[seed[3], seed[2]], "HeJaCCEf"], // Bronze - alternative: Berserk vs LCZero
+  [[seed[1], seed[2]], "niV1sF1a"], // Final: Stockfish vs LCZero
+  [[seed[1], seed[4]], "niV1sF1a"], // Final - alternative: Stockfish vs Obsidian
 ];
 
 const fetchTCECpgn = () => {
