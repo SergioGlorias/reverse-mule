@@ -84,7 +84,6 @@ const paring = [
   // Semifinals
   [[seed[1], seed[3]], "6wRXB7bM"], // Match 1: Stockfish vs Berserk
   [[seed[2], seed[4]], "8fBXtCYx"], // Match 2: LCZero vs Obsidian
-  [[seed[2], seed[8]], "8fBXtCYx"], // Match 2 - alternative: LCZero vs Integral
 
   // Bronze & Final
   [[seed[0], seed[0]], "HeJaCCEf"], // Bronze
