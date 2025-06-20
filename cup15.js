@@ -157,9 +157,12 @@ const run = async () => {
   const termination = pgn.headers.get("Termination");
 
   if (terminationDetails) {
-    if (termination)
-      pgn.headers.set("Termination", `${termination} - ${terminationDetails}`);
-    else pgn.headers.set("Termination", terminationDetails);
+    pgn.headers.set(
+      "Termination",
+      termination
+        ? `${termination} - ${terminationDetails}`
+        : terminationDetails
+    );
   }
 
   const moves = [];
