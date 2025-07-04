@@ -39,6 +39,7 @@ const Rounds = {
     "iBofjzwi", // Round 28
     "CgZEBB7O", // Round 29
     "i0uXPN7j", // Round 30
+    "CYybOotx", // tiebreak
   ],
   league2: [
     "aN38KYzh", // Round 1
@@ -248,7 +249,10 @@ const run = async () => {
 
   let aN = parseInt(roundN) - 1;
 
-  if (e.includes("entrance")) roundLeague = Rounds.entrance[aN];
+  if (e.includes("entrance")) {
+    if (e.includes("tiebreak") roundLeague = Rounds.entrance[Rounds.entrance.length -1]
+    else roundLeague = Rounds.entrance[aN]
+  };
   else if (e.includes("league 2")) roundLeague = Rounds.league2[aN];
   else if (e.includes("league 1")) roundLeague = Rounds.league1[aN];
   else if (e.includes("division")) roundLeague = Rounds.divisionP[aN];
