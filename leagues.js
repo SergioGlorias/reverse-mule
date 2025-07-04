@@ -250,7 +250,7 @@ const run = async () => {
   let aN = parseInt(roundN) - 1;
 
   if (e.includes("entrance")) {
-    if (e.includes("tiebreak") roundLeague = Rounds.entrance[Rounds.entrance.length -1]
+    if (e.includes("tiebreak") roundLeague = Rounds.entrance[30]
     else roundLeague = Rounds.entrance[aN]
   };
   else if (e.includes("league 2")) roundLeague = Rounds.league2[aN];
