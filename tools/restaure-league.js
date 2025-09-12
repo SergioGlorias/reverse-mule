@@ -196,6 +196,38 @@ const Rounds = {
   // bonus: ["Gw2pKKhE"],
 };
 
+const fetchTCECpgn = () => {
+  return fetch("https://tcec-chess.com/evalbotelo/archive.pgn", {
+    headers: {
+      "User-Agent": "github.com/SergioGlorias/reverse-mule",
+    },
+  })
+    .then((res) => {
+      if (res.status !== 200) return null;
+      return res.text();
+    })
+    .then((pgn) => parsePgn(pgn))
+    .catch(() => null);
+};
+
+const pushPGN = (pgn, id) => {
+  return fetch(`https://lichess.org/api/broadcast/round/${id}/push`, {
+    body: pgn,
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + litoken,
+      "User-Agent": "Reverse Mule by SergioGlorias/reverse-mule",
+    },
+  })
+    .then((res) => {
+      console.log(res.status);
+      return res.json();
+    })
+    .catch((res) => {
+      console.error(res);
+      return null;
+    });
+};
 
 const run = async () => {
   console.log("=== FETCH ===");
@@ -234,47 +266,47 @@ const run = async () => {
     if (roundLeague == undefined) continue;
 
     const white = pgn.headers.get("White"),
-    black = pgn.headers.get("Black"),
-    tc = pgn.headers.get("TimeControl");
+      black = pgn.headers.get("Black"),
+      tc = pgn.headers.get("TimeControl");
 
     console.log(`Match: ${white} - ${black}`);
 
     const terminationDetails = pgn.headers.get("TerminationDetails"),
-    termination = pgn.headers.get("Termination");
+      termination = pgn.headers.get("Termination");
 
-  if (terminationDetails) {
-    pgn.headers.set(
-      "Termination",
-      termination
-        ? `${termination} - ${terminationDetails}`
-        : terminationDetails
-    );
-  }
+    if (terminationDetails) {
+      pgn.headers.set(
+        "Termination",
+        termination
+          ? `${termination} - ${terminationDetails}`
+          : terminationDetails
+      );
+    }
 
     const moves = [];
 
     for (let m of pgn.moves.mainline()) {
-        let clk = null;
-        if (m.comments && m.comments[0]) {
-          const comment = m.comments[0];
-          const tlMatch = comment.match(/tl=(\d+)/);
-          if (tlMatch) {
-            clk = dayjs.duration(Number(tlMatch[1]), "milliseconds");
-          } else if (comment.includes("book,") && tc) {
-            const t = tc.split("+")[0];
-            clk = dayjs.duration(Number(t), "seconds");
-          }
+      let clk = null;
+      if (m.comments && m.comments[0]) {
+        const comment = m.comments[0];
+        const tlMatch = comment.match(/tl=(\d+)/);
+        if (tlMatch) {
+          clk = dayjs.duration(Number(tlMatch[1]), "milliseconds");
+        } else if (comment.includes("book,") && tc) {
+          const t = tc.split("+")[0];
+          clk = dayjs.duration(Number(t), "seconds");
         }
-        if (clk) {
-          const h = clk.hours();
-          const mnt = clk.minutes();
-          const s = clk.seconds();
-          m.comments = [`[%clk ${h}:${mnt}:${s}]`];
-        } else if (m.comments) {
-          m.comments = [];
-        }
-        moves.push(m);
       }
+      if (clk) {
+        const h = clk.hours();
+        const mnt = clk.minutes();
+        const s = clk.seconds();
+        m.comments = [`[%clk ${h}:${mnt}:${s}]`];
+      } else if (m.comments) {
+        m.comments = [];
+      }
+      moves.push(m);
+    }
 
     const pgg = {
       headers: pgn.headers,
