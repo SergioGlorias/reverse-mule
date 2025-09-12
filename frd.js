@@ -1,11 +1,6 @@
-import { parsePgn, makePgn, ChildNode, Node } from "chessops/pgn";
-import process from "node:process";
-
-import dayjs from "dayjs";
-import duration from "dayjs/plugin/duration.js";
-dayjs.extend(duration);
-
-const litoken = process.env.LICHESS_TOKEN;
+import { pgnEdit } from "./TCEC-Funcion/pgn-edit.js";
+import { fetchTCECpgnLive } from "./TCEC-Funcion/pgn-get.js";
+import { LichessPushPGN } from "./TCEC-Funcion/pgn-push.js";
 
 const Rounds = {
   leagueA: [
@@ -185,49 +180,9 @@ const Rounds = {
   final: ["E33TELm8"],
 };
 
-const fetchTCECpgn = () => {
-  return fetch("https://tcec-chess.com/evalbotelo/live.pgn", {
-    headers: {
-      "User-Agent": "github.com/SergioGlorias/reverse-mule",
-    },
-  })
-    .then((res) => {
-      if (res.status !== 200) return null;
-      return res.text();
-    })
-    .then((pgn) => parsePgn(pgn)[0])
-    .then((pgn) => {
-      pgn.headers.set("WhiteTitle", "BOT");
-      pgn.headers.set("BlackTitle", "BOT");
-      pgn.headers.set("WhiteFideId", "0");
-      pgn.headers.set("BlackFideId", "0");
-      return pgn;
-    })
-    .catch(() => null);
-};
-
-const pushPGN = (pgn, id) => {
-  return fetch(`https://lichess.org/api/broadcast/round/${id}/push`, {
-    body: pgn,
-    method: "POST",
-    headers: {
-      Authorization: "Bearer " + litoken,
-      "User-Agent": "Reverse Mule by SergioGlorias/reverse-mule",
-    },
-  })
-    .then((res) => {
-      console.log(res.status);
-      return res.json();
-    })
-    .catch((res) => {
-      console.error(res);
-      return null;
-    });
-};
-
 const run = async () => {
   console.log("=== FETCH ===");
-  const pgn = await fetchTCECpgn();
+  const pgn = await fetchTCECpgnLive();
   if (!pgn) return;
 
   const event = pgn.headers.get("Event");
@@ -236,7 +191,7 @@ const run = async () => {
 
   let e = event.toLowerCase();
   if (e.includes("testing")) return;
-  if (!e.includes("frd 3")) return;
+  if (!e.includes("frd 4")) return;
 
   const roundN = pgn.headers.get("Round").split(".")[0];
 
@@ -258,67 +213,11 @@ const run = async () => {
 
   if (roundLeague == undefined) return;
 
-  const white = pgn.headers.get("White");
-  const black = pgn.headers.get("Black");
-  const tc = pgn.headers.get("TimeControl");
-
-  console.log(`Match: ${white} - ${black}`);
-
-  const terminationDetails = pgn.headers.get("TerminationDetails");
-  const termination = pgn.headers.get("Termination");
-
-  if (terminationDetails) {
-    if (termination)
-      pgn.headers.set("Termination", `${termination} - ${terminationDetails}`);
-    else pgn.headers.set("Termination", terminationDetails);
-  }
-
-  const moves = [];
-
-  for (let m of pgn.moves.mainline()) {
-    if (m.comments) {
-      let i = m.comments[0].split(", ").find((c) => c.includes("tl="));
-      if (i) {
-        i = i.split("=")[1];
-
-        const time = dayjs.duration(parseInt(i), "milliseconds");
-        const hours = time.hours();
-        const minutes = time.minutes();
-        const seconds = time.seconds();
-        m.comments = [`[%clk ${hours}:${minutes}:${seconds}]`];
-      } else if (m.comments[0].includes("book,") && tc) {
-        let t = tc.split("+")[0];
-        const time = dayjs.duration(parseInt(t), "seconds");
-        const hours = time.hours();
-        const minutes = time.minutes();
-        const seconds = time.seconds();
-        m.comments = [`[%clk ${hours}:${minutes}:${seconds}]`];
-      } else {
-        m.comments = [];
-      }
-    }
-
-    moves.push(m);
-  }
-
-  const pgg = {
-    headers: pgn.headers,
-    moves: new Node(),
-  };
-
-  let node = pgg.moves;
-
-  moves.forEach((d) => {
-    const newNode = new ChildNode(d);
-    node.children = [newNode];
-    node = newNode;
-  });
-
-  const pgnText = makePgn(pgg);
+  const pgnText = pgnEdit(pgn);
 
   console.log(pgnText);
 
-  const r = await pushPGN(pgnText, roundLeague);
+  const r = await LichessPushPGN(pgnText, roundLeague);
 
   if (r) console.info(r);
   else console.error("Fail Push");
