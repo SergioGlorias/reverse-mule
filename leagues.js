@@ -1,11 +1,6 @@
-import { parsePgn, makePgn, ChildNode, Node } from "chessops/pgn";
-import process from "node:process";
-
-import dayjs from "dayjs";
-import duration from "dayjs/plugin/duration.js";
-dayjs.extend(duration);
-
-const litoken = process.env.LICHESS_TOKEN;
+import { pgnEdit } from "./TCEC-Funcion/pgn-edit.js";
+import { fetchTCECpgnLive } from "./TCEC-Funcion/pgn-get.js";
+import { LichessPushPGN } from "./TCEC-Funcion/pgn-push.js";
 
 const Rounds = {
   entrance: [
@@ -197,42 +192,9 @@ const Rounds = {
   // bonus: ["Gw2pKKhE"],
 };
 
-const fetchTCECpgn = () => {
-  return fetch("https://tcec-chess.com/evalbotelo/live.pgn", {
-    headers: {
-      "User-Agent": "github.com/SergioGlorias/reverse-mule",
-    },
-  })
-    .then((res) => {
-      if (res.status !== 200) return null;
-      return res.text();
-    })
-    .then((pgn) => parsePgn(pgn)[0])
-    .then((pgn) => {
-      pgn.headers.set("WhiteTitle", "BOT");
-      pgn.headers.set("BlackTitle", "BOT");
-      pgn.headers.set("WhiteFideId", "0");
-      pgn.headers.set("BlackFideId", "0");
-      return pgn;
-    })
-    .catch(() => null);
-};
-
-const pushPGN = (pgn, id) =>
-  fetch(`https://lichess.org/api/broadcast/round/${id}/push`, {
-    method: "POST",
-    body: pgn,
-    headers: {
-      Authorization: `Bearer ${litoken}`,
-      "User-Agent": "Reverse Mule by SergioGlorias/reverse-mule",
-    },
-  })
-    .then((res) => (console.log(res.status), res.json()))
-    .catch((err) => (console.error(err), null));
-
 const run = async () => {
   console.log("=== FETCH ===");
-  const pgn = await fetchTCECpgn();
+  const pgn = await fetchTCECpgnLive();
   if (!pgn) return;
 
   const event = pgn.headers.get("Event");
@@ -263,67 +225,11 @@ const run = async () => {
 
   if (roundLeague == undefined) return;
 
-  const white = pgn.headers.get("White"),
-    black = pgn.headers.get("Black"),
-    tc = pgn.headers.get("TimeControl");
-
-  console.log(`Match: ${white} - ${black}`);
-
-  const terminationDetails = pgn.headers.get("TerminationDetails"),
-    termination = pgn.headers.get("Termination");
-
-  if (terminationDetails) {
-    pgn.headers.set(
-      "Termination",
-      termination
-        ? `${termination} - ${terminationDetails}`
-        : terminationDetails
-    );
-  }
-
-  const moves = [];
-
-  for (let m of pgn.moves.mainline()) {
-    let clk = null;
-    if (m.comments && m.comments[0]) {
-      const comment = m.comments[0];
-      const tlMatch = comment.match(/tl=(\d+)/);
-      if (tlMatch) {
-        clk = dayjs.duration(Number(tlMatch[1]), "milliseconds");
-      } else if (comment.includes("book,") && tc) {
-        const t = tc.split("+")[0];
-        clk = dayjs.duration(Number(t), "seconds");
-      }
-    }
-    if (clk) {
-      const h = clk.hours();
-      const mnt = clk.minutes();
-      const s = clk.seconds();
-      m.comments = [`[%clk ${h}:${mnt}:${s}]`];
-    } else if (m.comments) {
-      m.comments = [];
-    }
-    moves.push(m);
-  }
-
-  const pgg = {
-    headers: pgn.headers,
-    moves: new Node(),
-  };
-
-  let node = pgg.moves;
-
-  moves.forEach((d) => {
-    const newNode = new ChildNode(d);
-    node.children = [newNode];
-    node = newNode;
-  });
-
-  const pgnText = makePgn(pgg);
+  const pgnText = pgnEdit(pgn);
 
   console.log(pgnText);
 
-  const r = await pushPGN(pgnText, roundLeague);
+  const r = await LichessPushPGN(pgnText, roundLeague);
 
   if (r) console.info(r);
   else console.error("Fail Push");

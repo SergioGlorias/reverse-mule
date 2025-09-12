@@ -20,3 +20,19 @@ export const fetchTCECpgnLive = () => {
     })
     .catch(() => null);
 };
+
+export const fetchTCECpgnArchive = () => {
+  return (
+    fetch("https://tcec-chess.com/evalbotelo/archive.pgn", {
+      headers: {
+        "User-Agent": "github.com/SergioGlorias/reverse-mule",
+      },
+    })
+      .then((res) => {
+        if (res.status !== 200) return null;
+        return res.text();
+      })
+      .then((pgn) => parsePgn(pgn))
+      .catch(() => null)
+  );
+};
