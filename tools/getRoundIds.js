@@ -1,4 +1,4 @@
-const id = "z39tvXaE"
+const id = "to8fpLnf"
 
 fetch(`https://lichess.org/api/broadcast/${id}`)
     .then(res => res.json())

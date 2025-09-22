@@ -1,186 +1,9 @@
 import { pgnEdit } from "../TCEC-Funcion/pgn-edit.js";
 import { fetchTCECpgnArchive } from "../TCEC-Funcion/pgn-get.js";
 import { LichessPushPGN } from "../TCEC-Funcion/pgn-push.js";
+import { roundChesck } from "../TCEC-Checks/FRD.js";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-const Rounds = {
-  leagueA: [
-    "1t6pGsl7",
-    "Wqdo1Foo",
-    "r4MD1lev",
-    "YSWvNPyL",
-    "DPGasIA6",
-    "byHd5yzQ",
-    "usic4EPf",
-    "bCNwZH4b",
-    "h7UrTvrw",
-    "jiDiYKAv",
-    "UxxxfUs0",
-    "qCbJAVD5",
-    "28rCr6yl",
-    "hrUVmm7R",
-    "rpnk4zOb",
-    "Ic1yscSG",
-    "civYTakY",
-    "BOi7dDGt",
-    "1k7wgty5",
-    "eyDFg4OZ",
-  ],
-  leagueB: [
-    "kvXg9aQj",
-    "kGTt950t",
-    "VhxEXfMA",
-    "MFub18i5",
-    "iq40Uc2L",
-    "DkGP16Pn",
-    "ruhcYcBa",
-    "p3X2Db79",
-    "1j0MwYiB",
-    "zJl4Dssy",
-    "Yq6PGu6P",
-    "kN6NgBDL",
-    "Mb7c2zXX",
-    "uSCA6slq",
-    "akRZ0Mcm",
-    "iK3lUkJt",
-    "gJVMxstN",
-    "9RXHpZL7",
-    "a23YnTR1",
-    "2n2zvRGn",
-  ],
-  leagueC: [
-    "VjawZKdU",
-    "UasdPsDx",
-    "BBTPYeLP",
-    "UQ7THPJ4",
-    "YkTpZ335",
-    "zSqlqb8X",
-    "CBr9kFcX",
-    "04KpUr3E",
-    "fsj8vX0m",
-    "Xu57PNoW",
-    "tkcMVX1F",
-    "HW2430rO",
-    "b4wWL3Sp",
-    "eizBaJRv",
-    "phc29jhH",
-    "nJRDD6mQ",
-    "R7CaKoP1",
-    "G0ibeeQ7",
-    "UsfhsPUx",
-    "WBY2dRC1",
-  ],
-  leagueD: [
-    "JtOSM1wm",
-    "FJ2EUfNj",
-    "EIUxLeuz",
-    "perzYj9k",
-    "GJChhEwV",
-    "5iUfIps7",
-    "NWaRxrUF",
-    "Vz7Qr23n",
-    "rkg6nOsI",
-    "Uv2CfbDT",
-    "MgztMRbX",
-    "5sBizb5R",
-    "hQCzVN34",
-    "BQWXw7nd",
-    "mETX7m2K",
-    "J1n3gpi1",
-    "z9YEGZlB",
-    "oWkETfsj",
-    "K8WUVpbo",
-    "42dYSvGq",
-  ],
-  semileague1: [
-    "JzKuZWvs",
-    "erFdttqt",
-    "POqlHeYz",
-    "FiSeIltB",
-    "F8kG5HIV",
-    "EqveDtHQ",
-    "JhsBCqiy",
-    "TAfj2OZt",
-    "G30a2juV",
-    "7IwHtu8r",
-    "cYexiZc7",
-    "pIoildJO",
-    "dirxLiUl",
-    "RSxOt8dq",
-    "H7FXa5hx",
-    "rOhR3RF6",
-    "irgstHUW",
-    "5DWPOB9c",
-    "BMBiDMrP",
-    "58RaABZb",
-  ],
-  semileague2: [
-    "3Mba9Key",
-    "9xK3zzP9",
-    "iAogrTvU",
-    "eKupP8LM",
-    "Bdx4RCth",
-    "APvvR1P8",
-    "m0PLzLE0",
-    "BZfheLSw",
-    "kJKn5WSK",
-    "ghZr587g",
-    "La7RgU2t",
-    "AJoDldzY",
-    "WKfCUryq",
-    "E2zq8u6v",
-    "B58rauor",
-    "02zyP6Cc",
-    "mO6Yj7iU",
-    "gYZnNVDi",
-    "1fky15RO",
-    "41BzTGCI",
-  ],
-  finalLeague: [
-    "lEJWKiFq",
-    "ZSesL0el",
-    "eFuwYf1X",
-    "0EFwBR4m",
-    "3Fb2QBuu",
-    "pYUx2p6R",
-    "B2vLzl48",
-    "hMfaQhio",
-    "apnXkGMS",
-    "xdPzxCtx",
-    "A6Qyt64g",
-    "lkml3f2P",
-    "At13vSfK",
-    "0uSbCev9",
-    "jmmDppJK",
-    "dDNh3ASx",
-    "bipEDX9w",
-    "73a8LRbI",
-    "pGRBQNdu",
-    "dKl73q7h",
-    "2UbQLUml",
-    "t4F0E5T3",
-    "fx3G66OI",
-    "4p1SIPmN",
-    "h2Tgbdbj",
-    "34hkr8Fm",
-    "hfhTUeEk",
-    "q7yl6gG1",
-    "MFtNNG0E",
-    "ANWYRQa7",
-    "FU1xvJ0F",
-    "X4g3xAie",
-    "O0Zwr81j",
-    "gb5t4pnB",
-    "WdJ3iAcj",
-    "7F6RQLRQ",
-    "2ZlBoSZQ",
-    "MlB53HdZ",
-    "GZzf6KcK",
-    "Cl5bLniy",
-  ],
-  final: ["E33TELm8"],
-};
 
 const run = async () => {
   console.log("=== FETCH ===");
@@ -199,25 +22,13 @@ const run = async () => {
 
     let e = event.toLowerCase();
     if (e.includes("testing")) continue;
-    if (!e.includes("27")) continue;
+    if (!e.includes("frd 4")) continue;
 
     const roundN = pgn.headers.get("Round").split(".")[0];
 
-    let roundLeague;
-
     let aN = parseInt(roundN) - 1;
 
-    if (e.includes("league a")) roundLeague = Rounds.leagueA[aN];
-    else if (e.includes("league b")) roundLeague = Rounds.leagueB[aN];
-    else if (e.includes("league c")) roundLeague = Rounds.leagueC[aN];
-    else if (e.includes("league d")) roundLeague = Rounds.leagueD[aN];
-    else if (e.includes("semileague 1")) roundLeague = Rounds.semileague1[aN];
-    else if (e.includes("semileague 2")) roundLeague = Rounds.semileague2[aN];
-    else if (e.includes("final league")) roundLeague = Rounds.finalLeague[aN];
-    else if (e.includes("final")) {
-      if (aN < 100) roundLeague = Rounds.final[0];
-      //else roundLeague = Rounds.final[1];
-    }
+    const roundLeague = roundChesck(aN, e);
 
     if (roundLeague == undefined) continue;
 
