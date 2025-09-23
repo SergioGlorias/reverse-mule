@@ -36,5 +36,12 @@ const run = async () => {
   console.log("=========");
 };
 
+const loop = async () => {
+  while (true) {
+    await run();
+    await new Promise(res => setTimeout(res, 3000));
+  }
+};
+
 console.log("===== CODE STARTED =====");
-setInterval(() => run(), 5 * 1000);
+loop();
