@@ -45,7 +45,17 @@ const run = async () => {
 
     await delay(5000);
   }
+  console.log("No more PGNs to process.");
 };
 
 console.log("===== CODE STARTED =====");
-run();
+
+const loop = async () => {
+  while (true) {
+    await run();
+    await new Promise(res => setTimeout(res, 10 * 60 * 1000)); // 10 minutes
+  }
+};
+
+console.log("===== CODE STARTED =====");
+loop();
