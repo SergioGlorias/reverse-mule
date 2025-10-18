@@ -17,6 +17,10 @@ const broadcasts = [
     iccfurl: "https://www.iccf.com/GetEventPGN.aspx?id=110214",
     roundsIds: ["Qf46H9Pz", "PvEverEc"],
   },
+  {
+    iccfurl: "https://www.iccf.com/GetEventPGN.aspx?id=111366",
+    roundsIds: ["O3jrmBbK", "DRBVxRdr"],
+  },
 ];
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
