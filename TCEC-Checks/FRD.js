@@ -218,7 +218,7 @@ export const roundChesck = (roundId, eventName) => {
   else if (eventName.includes("semileague 2")) roundLeague = Rounds.semileague2[roundId];
   else if (eventName.includes("final league")) roundLeague = Rounds.finalLeague[roundId];
   else if (eventName.includes("final")) {
-    if (aN < 100) roundLeague = Rounds.final[0];
+    if (roundLeague < 100) roundLeague = Rounds.final[0];
     //else roundLeague = Rounds.final[1];
   } else roundLeague = undefined;
 
