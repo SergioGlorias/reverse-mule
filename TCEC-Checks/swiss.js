@@ -112,6 +112,7 @@ const Rounds = {
     "6MruaXBX",
     "ckNT0yqu",
   ],
+  tiebreak: ["xXmZwEl5"],
 };
 
 export const roundChesck = (roundId, eventName) => {
@@ -125,6 +126,11 @@ export const roundChesck = (roundId, eventName) => {
     roundLeague = Rounds.playoff1[roundId];
   else if (eventName === (tcecSeason + "Swiss 9").toLowerCase())
     roundLeague = Rounds.swiss[roundId];
+  else if (
+    eventName.includes("Tiebreak".toLowerCase()) &&
+    eventName.includes(tcecSeason.toLowerCase())
+  )
+    roundLeague = Rounds.tiebreak[0];
 
   return roundLeague;
 };
