@@ -29,7 +29,7 @@ const litoken = process.env.LICHESS_TOKEN;
 const getPGN = async (iccfurl) => {
   try {
     const res = await fetch(iccfurl, {
-      headers: { "User-Agent": "github SergioGlorias/reverse-mule" },
+      headers: { "User-Agent": "github.com/SergioGlorias/reverse-mule"},
     });
     if (!res.ok) {
       console.error(`Erro ao buscar PGN: ${res.status}`);
