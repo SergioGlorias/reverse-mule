@@ -101,7 +101,7 @@ const run = async () => {
         .join("\n\n");
       const res = await pushPGN(gamesPGN, roundsIds[i]);
       console[res ? "info" : "error"](res || "Fail Push");
-      await delay(1000);
+      await delay(2000);
     }
     await delay(10000);
   }
