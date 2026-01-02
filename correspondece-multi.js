@@ -29,10 +29,11 @@ const litoken = process.env.LICHESS_TOKEN;
 const getPGN = async (iccfurl) => {
   try {
     const res = await fetch(iccfurl, {
-      headers: { "User-Agent": "github.com/SergioGlorias/reverse-mule" },
+      headers: { "User-Agent": "github SergioGlorias/reverse-mule" },
     });
     if (!res.ok) {
       console.error(`Erro ao buscar PGN: ${res.status}`);
+      console.error(await res.text());
       return null;
     }
     const text = await res.text();
@@ -102,8 +103,16 @@ const run = async () => {
       console[res ? "info" : "error"](res || "Fail Push");
       await delay(1000);
     }
-    await delay(5000);
+    await delay(10000);
   }
 };
-run();
-setInterval(run, 15 * 60 * 1000);
+
+const loop = async () => {
+  while (true) {
+    await run();
+    await new Promise((res) => setTimeout(res, 15 * 60 * 1000));
+  }
+};
+
+console.log("===== CODE STARTED =====");
+loop();
