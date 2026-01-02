@@ -17,10 +17,10 @@ const broadcasts = [
     iccfurl: "https://www.iccf.com/GetEventPGN.aspx?id=110214",
     roundsIds: ["Qf46H9Pz", "PvEverEc"],
   },
-  {
-    iccfurl: "https://www.iccf.com/GetEventPGN.aspx?id=111366",
-    roundsIds: ["O3jrmBbK", "DRBVxRdr"],
-  },
+  //{
+  //  iccfurl: "https://www.iccf.com/GetEventPGN.aspx?id=111366",
+  //  roundsIds: ["O3jrmBbK", "DRBVxRdr"],
+  //},
 ];
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -31,7 +31,10 @@ const getPGN = async (iccfurl) => {
     const res = await fetch(iccfurl, {
       headers: { "User-Agent": "github.com/SergioGlorias/reverse-mule" },
     });
-    if (!res.ok) return null;
+    if (!res.ok) {
+      console.error(`Erro ao buscar PGN: ${res.status}`);
+      return null;
+    }
     const text = await res.text();
     if (!text.trim()) return null;
     return parsePgn(text);
@@ -99,6 +102,7 @@ const run = async () => {
       console[res ? "info" : "error"](res || "Fail Push");
       await delay(1000);
     }
+    await delay(5000);
   }
 };
 run();
