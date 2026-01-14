@@ -17,10 +17,10 @@ const broadcasts = [
     iccfurl: "https://www.iccf.com/GetEventPGN.aspx?id=110214",
     roundsIds: ["Qf46H9Pz", "PvEverEc"],
   },
-  {
-    iccfurl: "https://www.iccf.com/GetEventPGN.aspx?id=111366",
-    roundsIds: ["O3jrmBbK", "DRBVxRdr"],
-  },
+  //{
+  //  iccfurl: "https://www.iccf.com/GetEventPGN.aspx?id=111366",
+  //  roundsIds: ["O3jrmBbK", "DRBVxRdr"],
+  //},
 ];
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -29,9 +29,13 @@ const litoken = process.env.LICHESS_TOKEN;
 const getPGN = async (iccfurl) => {
   try {
     const res = await fetch(iccfurl, {
-      headers: { "User-Agent": "github.com/SergioGlorias/reverse-mule" },
+      headers: { "User-Agent": "github.com/SergioGlorias/reverse-mule"},
     });
-    if (!res.ok) return null;
+    if (!res.ok) {
+      console.error(`Erro ao buscar PGN: ${res.status}`);
+      console.error(await res.text());
+      return null;
+    }
     const text = await res.text();
     if (!text.trim()) return null;
     return parsePgn(text);
@@ -97,9 +101,18 @@ const run = async () => {
         .join("\n\n");
       const res = await pushPGN(gamesPGN, roundsIds[i]);
       console[res ? "info" : "error"](res || "Fail Push");
-      await delay(1000);
+      await delay(2000);
     }
+    await delay(10000);
   }
 };
-run();
-setInterval(run, 15 * 60 * 1000);
+
+const loop = async () => {
+  while (true) {
+    await run();
+    await new Promise((res) => setTimeout(res, 15 * 60 * 1000));
+  }
+};
+
+console.log("===== CODE STARTED =====");
+loop();
