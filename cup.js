@@ -1,8 +1,8 @@
 import process from "node:process";
-import { roundChesck } from "./TCEC-Checks/cup";
-import { pgnEdit } from "./TCEC-Funcion/pgn-edit";
-import { fetchTCECpgn } from "./TCEC-Funcion/pgn-get";
-import { LichessPushPGN } from "./TCEC-Funcion/pgn-push";
+import { roundChesck } from "./TCEC-Checks/cup.js";
+import { pgnEdit } from "./TCEC-Funcion/pgn-edit.js";
+import { fetchTCECpgn } from "./TCEC-Funcion/pgn-get.js";
+import { LichessPushPGN } from "./TCEC-Funcion/pgn-push.js";
 
 import dayjs from "dayjs";
 import duration from "dayjs/plugin/duration.js";
