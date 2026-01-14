@@ -36,3 +36,14 @@ export const fetchTCECpgnArchive = () => {
       .catch(() => null)
   );
 };
+
+export const readPgnFromArchiveFile = async (filePath) => {
+  try {
+    const fs = await import("fs/promises");
+    const data = await fs.readFile(filePath, { encoding: "utf-8" });
+    return parsePgn(data);
+  } catch (error) {
+    console.error("Error reading PGN file:", error);
+    return null;
+  }
+}
