@@ -1,7 +1,7 @@
 import process from "node:process";
 import { roundChesck } from "./TCEC-Checks/cup.js";
 import { pgnEdit } from "./TCEC-Funcion/pgn-edit.js";
-import { fetchTCECpgn } from "./TCEC-Funcion/pgn-get.js";
+import { fetchTCECpgnLive } from "./TCEC-Funcion/pgn-get.js";
 import { LichessPushPGN } from "./TCEC-Funcion/pgn-push.js";
 
 import dayjs from "dayjs";
@@ -12,7 +12,7 @@ const litoken = process.env.LICHESS_TOKEN;
 
 const run = async () => {
   console.log("=== FETCH ===");
-  const pgn = await fetchTCECpgn();
+  const pgn = await fetchTCECpgnLive();
   if (!pgn) return;
 
   const event = pgn.headers.get("Event");
