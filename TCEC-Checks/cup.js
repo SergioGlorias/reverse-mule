@@ -76,10 +76,10 @@ const paring = [
     [[seed[2], seed[4]], "2akseQTP"], // Match 2: LCZero vs Obsidian
 
     // Bronze & Final
-    [[seed[0], seed[0]], "9pagLfp5"], // Bronze: TBA vs TBA
-    [[seed[0], seed[0]], "9pagLfp5"], // Bronze - alternative: TBA vs TBA
-    [[seed[0], seed[0]], "GLtCSuPC"], // Final: TBA vs TBA
-    [[seed[0], seed[0]], "GLtCSuPC"], // Final - alternative: TBA vs TBA
+    [[seed[3], seed[2]], "9pagLfp5"], // Bronze: Torch vs LCZero
+    [[seed[3], seed[4]], "9pagLfp5"], // Bronze - alternative: Torch vs Obsidian
+    [[seed[1], seed[2]], "GLtCSuPC"], // Final: Stockfish vs LCZero
+    [[seed[1], seed[4]], "GLtCSuPC"], // Final - alternative: Stockfish vs Obsidian
 ];
 
 export const roundChesck = (white, black) =>
