@@ -24,6 +24,8 @@ export const pgnEdit = (pgn) => {
   pgn.headers.delete("ECO");
   pgn.headers.delete("Variation");
 
+  pgn.headers.set("Site", "tcec-chess.com");
+
   const moves = [];
 
   const tcBase = tc ? Number(tc.split("+")[0]) : null;
