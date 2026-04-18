@@ -214,7 +214,7 @@ export const roundChesck = (roundId, eventName) => {
   } else if (eventName.includes("superfinal")) {
     if (roundId <= 100) roundLeague = Rounds.superfinal[0];
     //else roundLeague = Rounds.superfinal[1];
-  } else if (eventName.includes("AltSubfi Bonus".toLowerCase()) {
+  } else if (eventName.includes("AltSubfi Bonus".toLowerCase())) {
     if (roundId <= 100) roundLeague = Rounds.AltSubfi[0];
     //else roundLeague = Rounds.AltSubfi[1];
   }
