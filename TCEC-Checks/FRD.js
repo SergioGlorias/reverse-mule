@@ -89,7 +89,7 @@ const Rounds = {
 
 export const roundChesck = (roundId, eventName) => {
   let roundLeague
-  if (eventName.includes("playoffs")) roundLeague = Rounds.playoffs[roundId];
+  if (eventName.includes("playoff")) roundLeague = Rounds.playoffs[roundId];
   else if (eventName.includes("league a")) roundLeague = Rounds.leagueA[roundId];
   else if (eventName.includes("league b")) roundLeague = Rounds.leagueB[roundId];
   else if (eventName.includes("league c")) roundLeague = Rounds.leagueC[roundId];
