@@ -26,7 +26,7 @@ const Rounds = {
 
 export const roundChesck = (roundId, eventName) => {
     let roundLeague
-    if (eventName === "TCEC Season 30 - 4K V".toLowerCase()) roundLeague = Rounds.pool[roundId];
+    if (eventName === "TCEC Season 30 - 4K VII".toLowerCase()) roundLeague = Rounds.pool[roundId];
     else if (eventName.includes("MiniFinal".toLowerCase())) roundLeague = Rounds.final[0];
     else if (eventName.includes("ELF".toLowerCase())) roundLeague = Rounds.elf[0];
 
