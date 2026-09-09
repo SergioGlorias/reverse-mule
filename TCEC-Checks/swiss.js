@@ -1,136 +1,76 @@
 const Rounds = {
   playoff3: [
-    "J4GNxvcF",
-    "3VdvuNss",
-    "EwkPBTp6",
-    "uR2GPAdT",
-    "ZT9ZLlzW",
-    "C5kkQn7y",
-    "fJhzAr3h",
-    "bi58voAJ",
-    "ZKX0LPdp",
-    "hbcJpbPs",
-    "bjCCAqWC",
-    "BU7aqpmC",
-    "eSachP88",
-    "6IfdrB6E",
-    "9Zgkc3yB",
-    "dAQUeWrA",
-    "ReLVXlbo",
-    "nuKF1V8q",
-    "Oaox7eZr",
-    "PklcFd2Z",
-    "5yfZ8qjk",
-    "xJfXf4g7",
-    "VPr0jfPc",
-    "aDM1CjUO",
-    "wWAAztOw",
-    "KX6Pfwn5",
-    "aXn9ps6g",
-    "Ismc1zTJ",
-    "jXP27WtT",
-    "gAjUOOnA",
-    "F7wdQkK6",
-    "eUZriyL1",
-    "JlwrcuZl",
-    "jGHM8j7x",
-    "kY8mTAhg",
-    "2o95IncA",
+    'jJuEGS7V', 'GqbDNTqu', '9kIG6FCR', '30aL5ArX',
+    'kFV2j1uT', '0k3n6CWx', 'HvA1X7pJ', 'qkVQTEkF',
+    'eS5HGLGR', 'kucYKxgF', 'DaiOPYH8', 'SsobV5Rn',
+    '4NnAnQ52', 'wBMzGZ5V', 'CdRlTNAb', 'OfwfHGjU',
+    '0FNPYFHS', 'ZznfXU0u', '42AQfhRd', '4QtH2J0S',
+    'XFXInXee', 'PmZ8TGSE', 'ciPYggKO', 'tmiNYfZo',
+    'hjJ8FzDh', 'OcCms8FH', '9GGoU68v', 'W5Dn2sPL',
+    'So79eZF3', '4K4x46Uw', 'LGdiyU62', 'q0TjkS7V',
+    'ZobWmD8X', 'bPpTBIJ4', 'pow38Fwc', 'zaTySH4W',
+    'GIL5Dc8o', 'HdHuaakY', 'JcHl5w4K', 'ogj4YyM8',
+    'th1cKgHX', 'PCP1e8Qp', 'CxUvqwxa', 'MhAZAQvl',
+    '4BTHOBBj', 'GqC3h9Jt', 'zb9w51iL', 'DODCyFZO'
   ],
   playoff2: [
-    "krFyT1WL",
-    "qU6NccrQ",
-    "kpvIyyxf",
-    "xUvuO3az",
-    "sUK4862S",
-    "J01j1BQO",
-    "SNAzGYMq",
-    "o4U9NAvG",
-    "w0hsuEtE",
-    "3zgID1xa",
-    "bXJmo8ql",
-    "7rBgfW5Q",
-    "JQ8z5vuV",
-    "ZgPYsEYd",
-    "xBc9NWCI",
-    "fpt2YWTb",
-    "MOSOgvij",
-    "u3zd02lW",
-    "ybGO3A5g",
-    "CmmNJnP8",
-    "IcqwlJLK",
-    "2AI0bcCX",
-    "EjMp9x8d",
-    "tL3c3Q0u",
-    "35iFgGZv",
-    "w6WFsA9a",
-    "yODOYWle",
-    "DmQ4jRGi",
-    "Lil8xIut",
-    "X3iiBVQx",
-    "kGvS3Ilt",
-    "GvfZKw8E",
-    "eL09mnlp",
-    "hT2FptEE",
-    "VH9GnsjT",
-    "HGYmhHUd",
+    'kpZI9MVi', 'RHUs1IkL', 'EvTbMPXL',
+    'wCASI6vp', '8qjOng8f', 'u3bBnaaS',
+    'TOmHmuyv', 'jTX4w263', 'bBk8LMnZ',
+    'GlCJ0Uvk', 'bUjLpMPC', '7pWDAUjj',
+    '6csKgV1M', '8xeW94wS', '8cqF86lR',
+    'Bai19oV3', 'ZftYhuNg', 'EiyFfckX',
+    'hXA3lFSR', '0naeLnUI', 'q7gOEObq',
+    'JUiFwhFj', 'hSbkaNQt', 'hqgnjN6v',
+    'QQGPQVqE', 'eQS2KGkd', 'wDsx8J1Z',
+    'tNYhzCw9', '9z34GekZ', 'PbhDOMET',
+    'vab8sLBa', 'SmD5M2zH', 'CK9nH5fp',
+    '4BXlmwn4', 'iyzfk8wX', 'MpIAiwXd',
+    'q5tFKMYa', 'Ucsc2H4C', 'G1ACZd8s',
+    'XJxL0bDg', 'cWJtmnxW', 'yZRG64KQ',
+    '2pFs1W4B', 'bt76bXDU'
   ],
   playoff1: [
-    "HbrtRVUA",
-    "tdsR6WRO",
-    "Xyb4gDNy",
-    "YIBAJBht",
-    "4KGLv8CK",
-    "hbYsTGig",
-    "3b5o1LTu",
-    "tDVMi0dh",
-    "mXgvD32o",
-    "rQ3YAkwA",
-    "ny3TqwDv",
-    "VMzmTgEG",
-    "nlyXzUU0",
-    "01ikfVEW",
-    "qEKiZoyZ",
-    "nGiV3gnz",
-    "fHUfUdDc",
-    "Dlcxle1G",
-    "aHwF9q2X",
-    "BKuVE7OW",
-    "Kp3WjXWM",
-    "r8nhVe7J",
+    'ZyTmxngv', 'VezHR9zN', 'wzUBgVOW',
+    'rTWiyCwd', 'ULXb8XDu', 'La0hGDsh',
+    'wZB3RIeW', 'QjG6mvoV', 'yhHgZJgP',
+    '1TcHLC1E', 'rOatGOx6', 'V6KQmPby',
+    '1Vz00ASW', 'bsh0LNLC', 'avEC3stg',
+    '1nSL9jQl', '6FuTsu5v', 'xxxFdBYt',
+    '6STcZI6b', 'evgY8z0b', 'MsKP9KbN',
+    'VtxrkL71', 'qcmZrK3v', 'ccqJALHi',
+    'MFUVm1JU', 'JjVIHaET'
   ],
   swiss: [
-    "x0WJH0Nv",
-    "peBGxUpe",
-    "xl48cdw2",
-    "NJmjEEd8",
-    "NoslpRoK",
-    "2tAQzVNv",
-    "4SfecDRU",
-    "G8HTfiE7",
-    "boX4IfA2",
-    "6MruaXBX",
-    "ckNT0yqu",
+    'Nhw57KE3', 'e1yAqs6G',
+    'fKo8MW7Q', '096Jx79c',
+    'nrwmewUF', '7oTjtlPE',
+    'D0xDDUDe', 'Jhc00xV5',
+    'ZcYk0sTJ', 'dRWFdbTL',
+    'qwlMA155', 'cGOgghZE',
+    'BQ2RHtZz'
   ],
-  tiebreak: ["xXmZwEl5"],
+  // tiebreak: ["xXmZwEl5"],
 };
 
 export const roundChesck = (roundId, eventName) => {
-  const tcecSeason = "TCEC Season 29 - ";
+  const tcecSeason = "TCEC Season 30 - ".toLowerCase();
+  if (!eventName.includes(tcecSeason)) return;
+  const event = eventName.replace(tcecSeason, "").trim();
   let roundLeague;
-  if (eventName === (tcecSeason + "Category 3 Playoff").toLowerCase())
+  if (event.includes("Category".toLowerCase()) && event.includes("Playoff".toLowerCase()) && event.includes("3") && event.includes("4"))
     roundLeague = Rounds.playoff3[roundId];
-  else if (eventName === (tcecSeason + "Category 2 Playoff").toLowerCase())
+  else if (event === "Category 2 Playoff")
     roundLeague = Rounds.playoff2[roundId];
-  else if (eventName === (tcecSeason + "Category 1 Playoff").toLowerCase())
+  else if (event === "Category 1 Playoff")
     roundLeague = Rounds.playoff1[roundId];
-  else if (eventName === (tcecSeason + "Swiss 9").toLowerCase())
+  else if (event === "Swiss 10")
     roundLeague = Rounds.swiss[roundId];
-  else if (
-    eventName.includes("Tiebreak".toLowerCase()) &&
-    eventName.includes(tcecSeason.toLowerCase())
+  /*else if (
+    event.includes("Tiebreak".toLowerCase()) &&
+    event.includes(tcecSeason.toLowerCase())
   )
     roundLeague = Rounds.tiebreak[0];
-
+  */
   return roundLeague;
 };
