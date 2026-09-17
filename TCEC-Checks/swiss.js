@@ -60,11 +60,11 @@ export const roundChesck = (roundId, eventName) => {
   let roundLeague;
   if (event.includes("Category".toLowerCase()) && event.includes("Playoff".toLowerCase()) && event.includes("3") && event.includes("4"))
     roundLeague = Rounds.playoff3[roundId];
-  else if (event === "Category 2 Playoff")
+  else if (event === "Category 2 Playoff".toLowerCase())
     roundLeague = Rounds.playoff2[roundId];
-  else if (event === "Category 1 Playoff")
+  else if (event === "Category 1 Playoff".toLowerCase())
     roundLeague = Rounds.playoff1[roundId];
-  else if (event === "Swiss 10")
+  else if (event === "Swiss 10".toLowerCase())
     roundLeague = Rounds.swiss[roundId];
   /*else if (
     event.includes("Tiebreak".toLowerCase()) &&
