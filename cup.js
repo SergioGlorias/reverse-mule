@@ -19,7 +19,7 @@ const run = async () => {
 
   console.log(`Event: ${event}`);
 
-  if (!event.toLowerCase().includes("cup 16")) return;
+  if (!event.toLowerCase().includes("cup 17")) return;
   if (event.toLowerCase().includes("testing")) return;
 
   const white = pgn.headers.get("White");
