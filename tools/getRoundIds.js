@@ -1,4 +1,4 @@
-const id = "QnkQJBhj"
+const id = process.argv[2];
 
 fetch(`https://lichess.org/api/broadcast/${id}`)
     .then(res => res.json())
