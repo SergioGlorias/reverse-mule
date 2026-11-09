@@ -22,7 +22,7 @@ const run = async () => {
 
         let e = event.toLowerCase();
         if (e.includes("testing")) continue;
-        if (!e.includes("cup 16")) continue;
+        if (!e.includes("cup 17")) continue;
 
         const roundN = pgn.headers.get("Round").split(".")[1];
         pgn.headers.set("Round", roundN.toString());
