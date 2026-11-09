@@ -10,54 +10,51 @@ const seed = [
     "LCZero", // 8
 
     // RANDOM SEED (ordenado pelo randomizador)
-    //
-    // engines que vão entrar:
-    /* Viridithas
-    Raphael
-    Ceres
-    Igel
-    Berserk
-    Quanticade
-    Caissa
-    Cinder
-    Obsidian
-    Stormphrax
-    Ginkgo
-    PZChessBot
-    RubiChess
-    Clover
-    rofChade
-    Tarnished
-    Tcheran
-    Uralochka
-    Seer
-    Prune
-    Heimdall
-    KomodoDragon
-    Arasan
-    Stoofvlees */
-    // Ainda não se sabe qual a ordem Final 
+    "Stormphrax", // 18
+    "Stoofvlees", // 32
+    "Berserk", // 13
+    "Seer", // 27
+    "Igel", // 12
+    "Arasan", // 31
+    "Viridithas", // 9
+    "rofChade", // 23
+    "Raphael", // 10
+    "Tarnished", // 24
+    "PZChessBot", // 20
+    "KomodoDragon", // 30
+    "Ceres", // 11
+    "Uralochka", // 26
+    "Obsidian", // 17
+    "Tcheran", // 25
+    "Cinder", // 16
+    "Prune", // 28
+    "Ginkgo", // 19
+    "RubiChess", // 21
+    "Quanticade", // 14
+    "Clover", // 22
+    "Caissa", // 15
+    "Heimdall", // 29
 
 ];
 
 const paring = [
     // Round 32
-    [[seed[1], seed[9]], "Kc9hjdrh"], // Match 1: 
-    [[seed[10], seed[11]], "XfXHTlGw"], // Match 2:
-    [[seed[5], seed[12]], "unBB0fI7"], // Match 3:
-    [[seed[13], seed[14]], "5IyabTlU"], // Match 4:
-    [[seed[3], seed[15]], "H6DLf23N"], // Match 5:
-    [[seed[16], seed[17]], "gADHABoc"], // Match 6: 
-    [[seed[7], seed[18]], "69tTImGB"], // Match 7: 
-    [[seed[19], seed[20]], "nihndDlz"], // Match 8:
-    [[seed[2], seed[21]], "8JN5MKzT"], // Match 9: 
-    [[seed[22], seed[23]], "i3eb5Ofg"], // Match 10: 
-    [[seed[6], seed[24]], "OxO0RZaz"], // Match 11: 
-    [[seed[25], seed[26]], "jKlIAcfW"], // Match 12: 
-    [[seed[4], seed[27]], "AA2HeEfj"], // Match 13: 
-    [[seed[28], seed[29]], "mv7O4xeN"], // Match 14: 
-    [[seed[8], seed[30]], "adfmlQiE"], // Match 15: 
-    [[seed[31], seed[32]], "t42BdMkM"], // Match 16: 
+    [[seed[1], seed[9]], "Kc9hjdrh"], // Match 1: Stockfish vs Stormphrax
+    [[seed[10], seed[11]], "XfXHTlGw"], // Match 2: Stoofvlees vs Berserk
+    [[seed[5], seed[12]], "unBB0fI7"], // Match 3: Integral vs Seer
+    [[seed[13], seed[14]], "5IyabTlU"], // Match 4: Arasan vs Igel
+    [[seed[3], seed[15]], "H6DLf23N"], // Match 5: Reckless vs Viridithas
+    [[seed[16], seed[17]], "gADHABoc"], // Match 6: rofChade vs Raphael
+    [[seed[7], seed[18]], "69tTImGB"], // Match 7: Halogen vs Tarnished
+    [[seed[19], seed[20]], "nihndDlz"], // Match 8: PZChessBot vs KomodoDragon
+    [[seed[2], seed[21]], "8JN5MKzT"], // Match 9: PlentyChess vs Ceres
+    [[seed[22], seed[23]], "i3eb5Ofg"], // Match 10: Uralochka vs Obsidian
+    [[seed[6], seed[24]], "OxO0RZaz"], // Match 11: Torch vs Tcheran
+    [[seed[25], seed[26]], "jKlIAcfW"], // Match 12: Cinder vs Prune
+    [[seed[4], seed[27]], "AA2HeEfj"], // Match 13: Pawnocchio vs Ginkgo
+    [[seed[28], seed[29]], "mv7O4xeN"], // Match 14: RubiChess vs Quanticade
+    [[seed[8], seed[30]], "adfmlQiE"], // Match 15: LCZero vs Clover
+    [[seed[31], seed[32]], "t42BdMkM"], // Match 16: Caissa vs Heimdall
 
     //Round 16
     [[seed[0], seed[0]], "mLNV5DfZ"], // Match 1: TBA
