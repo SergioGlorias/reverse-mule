@@ -10,30 +10,30 @@ const seed = [
     "LCZero", // 8
 
     // RANDOM SEED (ordenado pelo randomizador)
-    "Stormphrax", // 18
-    "Stoofvlees", // 32
-    "Berserk", // 13
-    "Seer", // 27
-    "Igel", // 12
-    "Arasan", // 31
-    "Viridithas", // 9
-    "rofChade", // 23
-    "Raphael", // 10
-    "Tarnished", // 24
-    "PZChessBot", // 20
-    "KomodoDragon", // 30
-    "Ceres", // 11
-    "Uralochka", // 26
-    "Obsidian", // 17
-    "Tcheran", // 25
-    "Cinder", // 16
-    "Prune", // 28
-    "Ginkgo", // 19
-    "RubiChess", // 21
-    "Quanticade", // 14
-    "Clover", // 22
-    "Caissa", // 15
-    "Heimdall", // 29
+    "Stormphrax", // 18 (9)
+    "Stoofvlees", // 32 (10)
+    "Berserk", // 13 (11)
+    "Seer", // 27 (12)
+    "Igel", // 12 (13)
+    "Arasan", // 31 (14)
+    "Viridithas", // 9 (15)
+    "rofChade", // 23 (16)
+    "Raphael", // 10 (17)
+    "Tarnished", // 24 (18)
+    "PZChessBot", // 20 (19)
+    "KomodoDragon", // 30 (20)
+    "Ceres", // 11  (21)
+    "Uralochka", // 26 (22)
+    "Obsidian", // 17 (23)
+    "Tcheran", // 25 (24)
+    "Cinder", // 16 (25)
+    "Prune", // 28 (26)
+    "Ginkgo", // 19 (27)
+    "RubiChess", // 21 (28)
+    "Quanticade", // 14 (29)
+    "Clover", // 22 (30)
+    "Caissa", // 15  (31)
+    "Heimdall", // 29 (32)
 
 ];
 
