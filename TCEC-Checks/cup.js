@@ -57,7 +57,7 @@ const paring = [
 
   //Round 16
   [[seed[1], seed[11]], "mLNV5DfZ"], // Match 1: Stockfish vs Berserk
-  [[seed[5], seed[14]], "0iCOhFHM"], // Match 2: Integral vs Arasan
+  [[seed[5], seed[13]], "0iCOhFHM"], // Match 2: Integral vs Igel
   [[seed[0], seed[0]], "s07Ntgws"], // Match 3: TBA
   [[seed[0], seed[0]], "ghCgtzRT"], // Match 4: TBA
   [[seed[0], seed[0]], "IrXO7tUd"], // Match 5: TBA
