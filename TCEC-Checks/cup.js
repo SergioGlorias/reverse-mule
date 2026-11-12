@@ -41,7 +41,7 @@ const paring = [
   [[seed[1], seed[9]], "Kc9hjdrh"], // Match 1: Stockfish vs Stormphrax
   [[seed[10], seed[11]], "XfXHTlGw"], // Match 2: Stoofvlees vs Berserk
   [[seed[5], seed[12]], "unBB0fI7"], // Match 3: Integral vs Seer
-  [[seed[13], seed[14]], "5IyabTlU"], // Match 4: Arasan vs Igel
+  [[seed[13], seed[14]], "5IyabTlU"], // Match 4: Igel vs Arasan
   [[seed[3], seed[15]], "H6DLf23N"], // Match 5: Reckless vs Viridithas
   [[seed[16], seed[17]], "gADHABoc"], // Match 6: rofChade vs Raphael
   [[seed[7], seed[18]], "69tTImGB"], // Match 7: Halogen vs Tarnished
