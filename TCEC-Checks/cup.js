@@ -57,7 +57,7 @@ const paring = [
     [[seed[31], seed[32]], "t42BdMkM"], // Match 16: Caissa vs Heimdall
 
     //Round 16
-    [[seed[0], seed[0]], "mLNV5DfZ"], // Match 1: TBA
+    [[seed[1], seed[0]], "mLNV5DfZ"], // Match 1: Stockfish vs TBA
     [[seed[0], seed[0]], "0iCOhFHM"], // Match 2: TBA
     [[seed[0], seed[0]], "s07Ntgws"], // Match 3: TBA
     [[seed[0], seed[0]], "ghCgtzRT"], // Match 4: TBA
