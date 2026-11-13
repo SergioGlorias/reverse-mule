@@ -58,8 +58,8 @@ const paring = [
   //Round 16
   [[seed[1], seed[11]], "mLNV5DfZ"], // Match 1: Stockfish vs Berserk
   [[seed[5], seed[13]], "0iCOhFHM"], // Match 2: Integral vs Igel
-  [[seed[0], seed[0]], "s07Ntgws"], // Match 3: TBA
-  [[seed[0], seed[0]], "ghCgtzRT"], // Match 4: TBA
+  [[seed[3], seed[17]], "s07Ntgws"], // Match 3: Reckless vs Raphael
+  [[seed[7], seed[0]], "ghCgtzRT"], // Match 4: TBA
   [[seed[0], seed[0]], "IrXO7tUd"], // Match 5: TBA
   [[seed[0], seed[0]], "Mql1boTw"], // Match 6: TBA
   [[seed[0], seed[0]], "77GFEPVG"], // Match 7: TBA
