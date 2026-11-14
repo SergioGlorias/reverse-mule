@@ -59,10 +59,10 @@ const paring = [
   [[seed[1], seed[11]], "mLNV5DfZ"], // Match 1: Stockfish vs Berserk
   [[seed[5], seed[13]], "0iCOhFHM"], // Match 2: Integral vs Igel
   [[seed[3], seed[17]], "s07Ntgws"], // Match 3: Reckless vs Raphael
-  [[seed[7], seed[0]], "ghCgtzRT"], // Match 4: TBA
-  [[seed[0], seed[0]], "IrXO7tUd"], // Match 5: TBA
-  [[seed[0], seed[0]], "Mql1boTw"], // Match 6: TBA
-  [[seed[0], seed[0]], "77GFEPVG"], // Match 7: TBA
+  [[seed[7], seed[19]], "ghCgtzRT"], // Match 4: Halogen vs PZChessBot
+  [[seed[2], seed[23]], "IrXO7tUd"], // Match 5: PlentyChess vs Obsidian
+  [[seed[6], seed[25]], "Mql1boTw"], // Match 6: Torch vs Cinder
+  [[seed[4], seed[0]], "77GFEPVG"], // Match 7: TBA
   [[seed[0], seed[0]], "SA0QKouI"], // Match 8: TBA
 
   // Quarterfinals
