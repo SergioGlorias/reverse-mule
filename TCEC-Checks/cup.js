@@ -62,11 +62,11 @@ const paring = [
   [[seed[7], seed[19]], "ghCgtzRT"], // Match 4: Halogen vs PZChessBot
   [[seed[2], seed[23]], "IrXO7tUd"], // Match 5: PlentyChess vs Obsidian
   [[seed[6], seed[25]], "Mql1boTw"], // Match 6: Torch vs Cinder
-  [[seed[4], seed[0]], "77GFEPVG"], // Match 7: TBA
-  [[seed[0], seed[0]], "SA0QKouI"], // Match 8: TBA
+  [[seed[4], seed[29]], "77GFEPVG"], // Match 7: Pawnocchio vs Quanticade
+  [[seed[8], seed[31]], "SA0QKouI"], // Match 8: LCZero vs Caissa
 
   // Quarterfinals
-  [[seed[0], seed[0]], "Mu60kny7"], // Match 1: TBA
+  [[seed[1], seed[0]], "Mu60kny7"], // Match 1: TBA
   [[seed[0], seed[0]], "tO4JDKEb"], // Match 2: TBA
   [[seed[0], seed[0]], "xFb1L392"], // Match 3: TBA
   [[seed[0], seed[0]], "Jpk1ciGk"], // Match 4: TBA
