@@ -69,7 +69,7 @@ const paring = [
   [[seed[1], seed[5]], "Mu60kny7"], // Match 1: Stockfish vs Integral
   [[seed[3], seed[7]], "tO4JDKEb"], // Match 2: Reckless vs Halogen
   [[seed[2], seed[6]], "xFb1L392"], // Match 3: PlentyChess vs Torch
-  [[seed[0], seed[0]], "Jpk1ciGk"], // Match 4: TBA
+  [[seed[4], seed[8]], "Jpk1ciGk"], // Match 4: Pawnocchio vs LCZero
 
   // Semifinals
   [[seed[0], seed[0]], "wZw3g9gr"], // Match 1: TBA
