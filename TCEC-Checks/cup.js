@@ -72,7 +72,7 @@ const paring = [
   [[seed[4], seed[8]], "Jpk1ciGk"], // Match 4: Pawnocchio vs LCZero
 
   // Semifinals
-  [[seed[0], seed[0]], "wZw3g9gr"], // Match 1: TBA
+  [[seed[1], seed[3]], "wZw3g9gr"], // Match 1: Stockfish vs Reckless
   [[seed[0], seed[0]], "R2pSz1OU"], // Match 2: TBA
 
   // Bronze & Final
