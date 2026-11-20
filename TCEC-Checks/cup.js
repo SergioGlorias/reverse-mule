@@ -73,13 +73,13 @@ const paring = [
 
   // Semifinals
   [[seed[1], seed[3]], "wZw3g9gr"], // Match 1: Stockfish vs Reckless
-  [[seed[0], seed[0]], "R2pSz1OU"], // Match 2: TBA
+  [[seed[6], seed[8]], "R2pSz1OU"], // Match 2: Torch vs LCZero
 
   // Bronze & Final
-  [[seed[0], seed[0]], "rNG6zA9G"], // Bronze: TBA
-  [[seed[0], seed[0]], "rNG6zA9G"], // Bronze - alternative: TBA
-  [[seed[0], seed[0]], "foQc9DHb"], // Final: TBA
-  [[seed[0], seed[0]], "foQc9DHb"], // Final - alternative: TBA
+  [[seed[3], seed[6]], "rNG6zA9G"], // Bronze: Reckless vs Torch
+  [[seed[3], seed[8]], "rNG6zA9G"], // Bronze - alternative: Reckless vs LCZero
+  [[seed[1], seed[8]], "foQc9DHb"], // Final: Stockfish vs LCZero
+  [[seed[1], seed[6]], "foQc9DHb"], // Final - alternative: Stockfish vs Torch
 ];
 
 export const roundChesck = (white, black) =>
